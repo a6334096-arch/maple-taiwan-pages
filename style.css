@@ -338,3 +338,9 @@ header{gap:8px}.brand{min-width:0;flex-shrink:0}.header-right{min-width:0;gap:8p
 .legend .color-legend-heading{font-size:12px}.legend .color-phase{font-size:10px}.legend .color-legend-meta,.legend .color-legend-note{font-size:10px}.legend.season-color-legend .terrain-key{font-size:9px}
 }
 @media(max-width:360px){.detail-head h2{font-size:19px}.detail-nav{grid-template-columns:repeat(2,minmax(0,1fr))}.forecast-row{grid-template-columns:28px minmax(0,1fr) 72px}.map-toolbar #map-location{font-size:13px}}
+
+/* Official Facebook first, followed by the dated foliage source. */
+.latest-panel .foliage-links{display:grid;gap:8px;margin:10px 0}
+.latest-panel .foliage-links .share-button{margin:0;min-height:44px;font-size:13px}
+.latest-panel .foliage-links .secondary{background:#fffdf7;color:#304f40;border:1px solid #d8dfcf}
+.latest-panel .foliage-links .secondary:hover{background:#edf2e4}

@@ -174,7 +174,7 @@ function foliageBlock(p){
  const days=Math.floor((Date.now()-Date.parse(referenceDate+'T00:00:00+08:00'))/86400000);
  const stale=days>14;
  const mismatch=referenceDate.slice(0,7)!==month;
- return `<section class="foliage-panel"><div class="panel-title"><h3>最新楓況紀錄</h3><span class="badge" style="--c:${status.color};--bg:${status.bg}">${status.name}</span></div><p class="foliage-summary">${escapeHTML(o.summary)}</p><p class="foliage-meta">範圍：${escapeHTML(o.scope)}<br>公告日期：${escapeHTML(o.reported_at)}${o.observed_on?`<br>觀測日期：${escapeHTML(o.observed_on)}`:''}<br>${escapeHTML(o.source)} · <a href="${escapeHTML(o.source_url)}" target="_blank" rel="noopener noreferrer">查看楓況來源 ↗</a></p>${stale?'<p class="foliage-warning">這筆紀錄已超過 14 天，不能代表今天的楓況。</p>':''}${mismatch?'<p class="foliage-meta">紀錄日期與所選月份不同，不據此推估該月份楓況。</p>':''}</section>`;
+ return `<section class="foliage-panel"><div class="panel-title"><h3>最新楓況紀錄</h3><span class="badge" style="--c:${status.color};--bg:${status.bg}">${status.name}</span></div><p class="foliage-summary">${escapeHTML(o.summary)}</p><p class="foliage-meta">範圍：${escapeHTML(o.scope)}<br>公告日期：${escapeHTML(o.reported_at)}${o.observed_on?`<br>觀測日期：${escapeHTML(o.observed_on)}`:''}<br>${escapeHTML(o.source)}</p>${stale?'<p class="foliage-warning">這筆紀錄已超過 14 天，不能代表今天的楓況。</p>':''}${mismatch?'<p class="foliage-meta">紀錄日期與所選月份不同，不據此推估該月份楓況。</p>':''}</section>`;
 }
 function blogPhotosBlock(p){
  const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
@@ -263,16 +263,23 @@ function currentShares(p){
  const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
  return (p.recent_shares||[]).filter(o=>publicShareUrl(o.url)&&o.source&&/^\d{4}-\d{2}-\d{2}$/.test(o.published_on||'')&&Number.isFinite(Date.parse(o.published_on))&&o.published_on<=today).sort((a,b)=>b.published_on.localeCompare(a.published_on)).slice(0,2);
 }
+function foliageLinksBlock(p){
+ const fb=publicShareUrl(p.official_facebook_url),o=p.foliage;
+ let source=null;
+ try{const u=new URL(o?.source_url);if(u.protocol==='https:')source=u.href;}catch{}
+ const same=fb&&source&&linkDestination(fb)===linkDestination(source);
+ return `<div class="foliage-links" aria-label="官方臉書與楓況來源">${fb?`<a class="share-button" href="${escapeHTML(fb)}" target="_blank" rel="noopener noreferrer">${p.official_facebook_kind==='recommended'?'官方推薦 Facebook':'官方 Facebook'}${same?'・楓況來源':''} ↗</a>`:''}${source&&!same?`<a class="share-button secondary" href="${escapeHTML(source)}" target="_blank" rel="noopener noreferrer">查看楓況來源 ↗</a>`:''}</div>`;
+}
 function photosBlock(p){
  const records=currentShares(p),fb=publicShareUrl(p.official_facebook_url);
  const additional=(p.additional_facebook_links||[]).filter(o=>publicShareUrl(o.url)&&o.name).map(o=>`<a class="share-button" href="${escapeHTML(publicShareUrl(o.url))}" target="_blank" rel="noopener noreferrer">${escapeHTML(o.name)} Facebook ↗</a><p class="share-source">${escapeHTML(o.kind||'在地分享')} · ${escapeHTML(o.name)}</p>`).join('');
- if(!records.length&&!fb&&!additional)return '<section class="photos-panel"><div class="panel-title"><h3>最新現場分享</h3></div><p class="share-empty">尚無近期賞楓貼文</p></section>';
+ if(!records.length&&!fb&&!additional&&!p.foliage?.source_url)return '<section class="photos-panel"><div class="panel-title"><h3>最新現場分享</h3></div><p class="share-empty">尚無近期賞楓貼文</p></section>';
  const cards=records.map(o=>{
   const stale=Date.now()-Date.parse(o.observed_on||o.published_on)>14*86400000;
   const thumb=o.thumbnail_url&&o.thumbnail_permission&&/^https:\/\//.test(o.thumbnail_url)?o.thumbnail_url:null;
   return `<article class="share-card"><a class="share-preview" href="${escapeHTML(publicShareUrl(o.url))}" target="_blank" rel="noopener noreferrer">${thumb?`<img src="${escapeHTML(thumb)}" alt="${escapeHTML(o.title||p.name+'現場分享')}" loading="lazy" decoding="async" referrerpolicy="no-referrer"><span class="share-image-fallback" hidden>📷 查看原始貼文照片 ↗</span>`:'<span>📷 查看原始貼文照片 ↗</span>'}</a><div class="share-caption"><strong>${escapeHTML(o.title||'現場分享')}</strong><p>貼文日期：${escapeHTML(o.published_on)}${o.observed_on?` · 拍攝日期：${escapeHTML(o.observed_on)}`:' · 拍攝日期未標示'}</p><p>來源：${escapeHTML(o.source)}</p>${stale?'<p class="foliage-warning">這則分享已超過 14 天，請查看較新的貼文。</p>':''}</div></article>`;
  }).join('');
- return `<section class="photos-panel"><div class="panel-title"><h3>最新現場分享</h3><span class="share-label">${records.length?'公開貼文':'官方入口'}</span></div>${cards||'<p class="share-empty">尚無近期賞楓貼文</p>'}${fb?`<a class="share-button" href="${escapeHTML(fb)}" target="_blank" rel="noopener noreferrer">${p.official_facebook_kind==='recommended'?'查看官方推薦 Facebook 分享':'查看官方 Facebook 現場分享'} ↗</a><p class="share-source">來源：${escapeHTML(p.official_facebook_name||p.name+'官方 Facebook')}</p>`:''}${additional}<p class="share-note">開啟原站查看照片與發文日期；Facebook 可能需要登入。此入口不代表已有最新楓況。</p></section>`;
+ return `<section class="photos-panel"><div class="panel-title"><h3>最新現場分享</h3><span class="share-label">${records.length?'公開貼文':'官方入口'}</span></div>${foliageLinksBlock(p)}${cards}${additional}${fb||additional?'<p class="share-note">Facebook 可能需要登入；粉絲專頁入口不代表已有最新楓況。</p>':''}${!records.length&&!p.foliage?'<p class="share-empty">尚無近期楓況紀錄</p>':''}</section>`;
 }
 function historicalPhotosBlock(p){
  const seen=new Set();
@@ -311,7 +318,7 @@ function deduplicateDetailLinks(root){
  const seen=new Map();let removed=0;
  for(const anchor of anchors){
   const key=linkDestination(anchor.getAttribute('href'));
-  if(anchor.closest('.official-links')){seen.set(key,anchor);continue;}
+  if(anchor.closest('.official-links,.foliage-links')){seen.set(key,anchor);continue;}
   if(!seen.has(key)){seen.set(key,anchor);continue;}
   // Keep attribution/permission wording without a second clickable destination.
   if(anchor.closest('.photo-credit')){
