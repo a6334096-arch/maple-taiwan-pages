@@ -443,3 +443,68 @@ dialog h2{font-family:inherit;font-size:24px;line-height:1.5}dialog p{font-size:
 .detail-nav{gap:8px}.detail-nav button{font-size:13px}.legend .color-legend-heading{font-size:13px}.legend .color-phase,.legend .color-legend-meta,.legend .color-legend-note{font-size:11px}
 }
 @media(max-width:360px){#sidebar .forecast-tabs button,#sidebar .filters button{font-size:13px}.forecast-row{grid-template-columns:26px minmax(0,1fr) 72px}.detail-head h2{font-size:21px}.detail-body{padding:18px 12px}.detail .latest-panel{padding:14px 10px}}
+
+/* 2026-10-09: visual hierarchy, compact explanations and clear actions. */
+:root{--line:#dce4da;--muted:#526357;--shadow:0 8px 28px #243c3210}
+.detail{box-shadow:0 12px 40px #213b3226;border-color:#cfdccf}
+.detail-head{background:#fffefa;padding-bottom:16px}
+.detail-head h2{margin:0 0 6px;font-weight:700}
+.detail-head>p{margin:0 0 12px!important;color:#526357}
+.detail-nav{margin-top:12px;gap:8px}
+.detail-nav button{background:#f5f7f2;border-color:#d4dfd1;color:#3b5648;font-weight:500;transition:background .15s}
+.detail-nav button[aria-pressed=true]{background:#365b46;border-color:#365b46;color:#fff}
+.detail-body h3{margin:0 0 12px;line-height:1.55}
+.detail .latest-panel{background:#f3f7ef;border:1px solid #d6e2d0;border-radius:14px;padding:18px}
+.detail .latest-panel>h3{font-size:19px}
+.detail .foliage-panel{background:#fffefa;padding:16px;border:1px solid #dbe4d5;margin:16px 0 12px;border-radius:10px}
+.detail .latest-panel .blog-photos{margin-top:18px;padding-top:16px}
+.detail .reference-note,.detail .share-note,.detail .species-note{line-height:1.8;margin:10px 0 12px}
+.detail .season-panel,.detail .species-panel{padding-top:20px;margin-top:22px}
+.detail .dates{font-size:20px;margin:8px 0 12px;font-weight:650;line-height:1.65}
+.detail .badge{font-size:12px;padding:5px 8px;white-space:normal;max-width:40%;line-height:1.5}
+.detail .panel-title{align-items:start;gap:10px}
+.detail .season-source{padding:0 12px;background:#f6f7f2}
+.detail .season-source>summary{padding:11px 0}
+.detail .source-line:last-child{padding-bottom:12px}
+.detail .location-disclosure{margin-top:22px;border-top:1px solid var(--line);padding-top:12px}
+.detail .location-disclosure>summary{font-size:17px;font-weight:650;color:#304f40;padding:10px 0}
+.detail .location-info{margin:8px 0 0;padding-bottom:16px}
+.detail .location-heading{margin:14px 0 8px;font-size:16px}
+.detail .official-links{margin:0 0 18px;gap:8px}
+.detail .official-links .location-heading{margin-top:0}
+.detail .official-links a{background:#365b46;border-color:#365b46;color:#fff;margin:0;font-weight:600}
+.detail .official-links a:visited{color:#fff}
+.detail .official-links a:hover{background:#294a37;color:#fff}
+.detail .foliage-links .share-button:first-child:not(.secondary){background:#477357;border-color:#477357;color:#fff}
+.detail .foliage-links .share-button:first-child:not(.secondary):hover{background:#365b46;color:#fff}
+.detail .foliage-links .share-button.secondary{background:#e8f0e2;border-color:#b7cbb0;color:#304f40}
+.detail .live-camera>a{background:#e8f0e2;border-color:#b7cbb0;color:#304f40}
+.detail .location-navigation{background:#fffefa;border-color:#aabda7;color:#304f40}
+.detail .trail-information{display:block;font-size:15px;line-height:1.7;margin:6px 0 12px;padding:5px 0;color:#365b46;text-underline-offset:4px}
+.detail .coordinates{font-size:13px;line-height:1.7;margin:8px 0}
+.detail .article-title{padding:8px 0;font-size:16px;color:#365b46;line-height:1.7}
+.detail .article-disclaimer,.detail .share-source{font-size:13px;line-height:1.75}
+.detail .article-description{margin-top:8px}.detail .article-description>summary{font-size:14px;padding:10px 0}
+.detail .detail-footer{font-size:12px;line-height:1.7;gap:12px}.detail .save{font-size:14px;min-height:44px;padding:8px 12px}
+.forecast-row{border-bottom:1px solid #e0e6db;border-radius:10px;padding:14px 8px;transition:background .15s}
+.forecast-row:hover{background:#f0f5e9}.forecast-row.selected{background:#e6efdf;box-shadow:inset 3px 0 #477357}
+.forecast-place strong{font-weight:650}.forecast-place small{margin-top:4px}.forecast-period{color:#526357}
+#sidebar .forecast-tabs button,#sidebar .filters button{border-color:#d3dece}
+#sidebar .search-box{background:#fff;box-shadow:none;border-color:#cad8c6}
+.detail a:focus-visible,.detail button:focus-visible,.detail summary:focus-visible{outline:3px solid #b06d28;outline-offset:3px}
+@media(min-width:1051px){.detail-body{padding:22px}.detail-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.detail{width:min(470px,52%)}}
+@media(max-width:700px){.detail-head{padding:16px 16px 12px}.detail-head h2{font-size:22px}.detail-body{padding:18px 16px}.detail .latest-panel{padding:16px 12px}.detail .latest-panel>h3{font-size:18px}.detail .foliage-panel{padding:14px 12px}.detail .dates{font-size:19px}.detail .season-panel,.detail .species-panel{margin-top:20px;padding-top:18px}.detail .location-disclosure>summary{font-size:16px}}
+@media(max-width:360px){.detail-head{padding:14px 12px 10px}.detail-head h2{font-size:21px}.detail-body{padding:16px 12px}.detail .latest-panel{padding:14px 10px}.detail .badge{font-size:11px}.detail .panel-title{flex-wrap:wrap}.detail .badge{max-width:100%}}
+@media(prefers-reduced-motion:reduce){.forecast-row,.detail-nav button{transition:none}}
+
+.detail-nav button[aria-pressed=true]:hover,.detail-nav button[aria-pressed=true]:focus-visible{background:#365b46;color:#fff;border-color:#365b46}
+
+/* Dark neutral reading text; keep terrain, leaf colors and action hierarchy. */
+:root{--ink:#222222;--muted:#505050}
+body,.brand,input,select,.text-button,.map-title{color:#222222}
+.detail,.detail-head h2,.detail-body h3,.detail-body h4,.detail .location-heading,.detail .location-address,.detail .dates,.latest-panel .foliage-summary,.foliage-facts dd,.detail .location-disclosure>summary{color:#222222}
+.detail-head>p,.detail .reference-note,.detail .foliage-meta,.detail .share-source,.detail .source-line,.detail .species-note,.detail .camera-note,.detail .share-note,.detail .location-info,.detail .coordinates,.detail .dates-label,.detail .live-camera small,.detail .article-disclaimer,.history-photo .photo-credit,.foliage-facts dt,.article-count,.detail .detail-footer,#photo-viewer-caption,.forecast-place small,.forecast-period,.directory-note,.sidebar-footer{color:#505050}
+.forecast-place strong,#sidebar .forecast-heading h2,#sidebar .period,#sidebar .location-filters,#sidebar .list-tools,#sidebar .list-heading,.cluster-place,.detail .species-tags span{color:#222222}
+.detail .article-title,.detail .article-title:visited,.detail .trail-information,.detail .trail-information:visited,.detail .source-line a,.detail .photo-credit a,.detail .location-navigation,.detail .location-navigation:visited,.detail .live-camera>a,.detail .live-camera>a:visited,.detail .foliage-links .share-button.secondary,.detail .foliage-links .share-button.secondary:visited,.detail-nav button,.detail .save,.article-description>summary,.detail .season-source>summary{color:#222222}
+.detail .official-links a,.detail .official-links a:visited,.detail .official-links a:hover,.detail .foliage-links .share-button:first-child:not(.secondary),.detail .foliage-links .share-button:first-child:not(.secondary):visited,.detail .foliage-links .share-button:first-child:not(.secondary):hover,.detail-nav button[aria-pressed=true],.detail-nav button[aria-pressed=true]:hover,.detail-nav button[aria-pressed=true]:focus-visible{color:#fff}
+input::placeholder{color:#666666}
