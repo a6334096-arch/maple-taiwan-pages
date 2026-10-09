@@ -199,10 +199,18 @@ function relatedRoutesBlock(p){
  return `<section class="season-panel"><h3>園區內賞楓路線</h3>${p.related_routes.map(r=>`<p class="reference-note"><strong>${escapeHTML(r.name)}</strong><br>${escapeHTML(r.period)}<br><a href="${escapeHTML(r.source_url)}" target="_blank" rel="noopener noreferrer">路線來源 ↗</a></p>`).join('')}</section>`;
 }
 function officialInfoLink(p){
- const url=p.official_info_url||p.official_website_url||p.coordinate_source_url;
- const label=p.official_info_label||p.official_link_label||'官方景點資訊';
- const alternate=(p.official_alternate_links||[]).filter(o=>o.url&&o.label&&o.url!==url);
- return `<div class="official-links"><div class="location-heading">官方資訊</div>${url?`<a href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(label)} ↗</a>`:'<span>官方資訊待補</span>'}${alternate.map(o=>`<a href="${escapeHTML(o.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(o.label)} ↗</a>`).join('')}</div>`;
+ const candidates=[
+  {url:p.official_info_url,label:p.official_info_label||'官方景點資訊'},
+  {url:p.official_website_url,label:p.official_link_label||'景點官方網站'},
+  ...(p.official_alternate_links||[]),
+  ...(!p.official_info_url&&!p.official_website_url?[{url:p.coordinate_source_url,label:'官方景點介紹'}]:[])
+ ];
+ const fb=publicShareUrl(p.official_facebook_url);
+ if(fb)candidates.push({url:fb,label:p.official_facebook_kind==='recommended'?'官方推薦的在地 Facebook':'官方 Facebook・'+(p.official_facebook_name||p.name)});
+ const seen=new Set();const links=candidates.filter(o=>{
+  try{const u=new URL(o.url);if(u.protocol!=='https:')return false;const key=linkDestination(u.href);if(seen.has(key))return false;seen.add(key);return true;}catch{return false;}
+ });
+ return `<div class="official-links"><div class="location-heading">官方資訊</div>${links.length?links.map(o=>`<a href="${escapeHTML(o.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(o.label)} ↗</a>`).join(''):'<span>官方資訊待查核</span>'}</div>`;
 }
 function navigationLink(p){
  return `<a class="location-navigation" href="https://www.google.com/maps/search/?api=1&amp;query=${encodeURIComponent(p.lat+','+p.lon)}" target="_blank" rel="noopener noreferrer">地圖導航 ↗</a>`;
@@ -305,10 +313,14 @@ function deduplicateDetailLinks(root){
  const seen=new Map();let removed=0;
  for(const anchor of anchors){
   const key=linkDestination(anchor.getAttribute('href'));
+  if(anchor.closest('.official-links')){seen.set(key,anchor);continue;}
   if(!seen.has(key)){seen.set(key,anchor);continue;}
   // Keep attribution/permission wording without a second clickable destination.
   if(anchor.closest('.photo-credit')){
    const label=document.createElement('span');label.textContent=anchor.textContent.replace(/\s*↗$/,'');anchor.replaceWith(label);
+  }else if(anchor.closest('.blog-photo-link')){
+   // Keep the article useful even when its official guide is also an official entry.
+   continue;
   }else anchor.remove();
   removed++;
  }
@@ -318,9 +330,9 @@ function renderDetail(){
  let p=places.find(p=>p.id===selected);
  if(!p){$('#detail').innerHTML='';$('#detail').hidden=true;return;}
  $('#detail').hidden=false;const s=stage(p);
- $('#detail').innerHTML=`<div class="detail-head"><button class="detail-close" aria-label="關閉景點資訊">×</button><h2>${escapeHTML(p.name)}</h2><p>${escapeHTML(p.city)}</p><nav class="detail-nav" aria-label="景點資訊區塊"><button data-section="latest-panel">楓況與分享</button><button data-section="season-panel">歷年時間</button><button data-section="species-panel">品種</button><button data-section="blog-photos">旅遊文章</button><button data-section="location-disclosure">官方資訊</button></nav></div><div class="detail-body">${latestBlock(p)}<section class="season-panel"><div class="panel-title"><h3>歷年賞楓時間與秋色照片</h3><span class="badge" style="--c:${s.color};--bg:${s.bg}">${s.name}</span></div><div class="dates-label">所選月份 ${escapeHTML(month)}・歷年及一般季節參考</div><div class="dates">${escapeHTML(p.dates)}</div><p class="reference-note">歷年時間僅供參考，今年轉色可能提前或延後。</p><details class="season-source"><summary>季節來源與說明</summary><div class="source-line">${p.source?escapeHTML(p.source):'尚無季節來源'}${p.source_url?` · <a href="${escapeHTML(p.source_url)}" target="_blank" rel="noopener noreferrer">來源 ↗</a>`:''}</div><div class="source-line">${escapeHTML(p.note||'')}${p.checked_at?`<br>來源查核：${escapeHTML(p.checked_at.slice(0,10))}（不是觀測日期）`:''}</div></details>${historicalPhotosBlock(p)}</section>${relatedRoutesBlock(p)}${speciesBlock(p)}<details class="location-disclosure"><summary>官方資訊跟即時影像</summary><div class="location-info">${officialInfoLink(p)}<div class="location-heading">景點位置</div><strong class="location-address">${escapeHTML(p.region)} · ${escapeHTML(p.city)}</strong><div class="coordinates">緯度 ${Number(p.lat).toFixed(5)}° N<br>經度 ${Number(p.lon).toFixed(5)}° E</div>${escapeHTML(p.category)} · ${escapeHTML(p.coordinate_scope)}${p.intro?`<p class="reference-note"><strong>景點特色：</strong>${escapeHTML(p.intro)}</p>`:''}${p.notice_url?`<br><a href="${escapeHTML(p.notice_url)}" target="_blank" rel="noopener noreferrer">查看開放公告 ↗</a>`:''}${navigationLink(p)}${liveCamerasBlock(p)}</div></details><div class="detail-footer"><span>資料依已核對來源顯示</span><button class="save" aria-pressed="${saved.has(p.id)}">${saved.has(p.id)?'♥ 已收藏':'♡ 收藏景點'}</button></div></div>`;
+ $('#detail').innerHTML=`<div class="detail-head"><button class="detail-close" aria-label="關閉景點資訊">×</button><h2>${escapeHTML(p.name)}</h2><p>${escapeHTML(p.city)}</p><nav class="detail-nav" aria-label="景點資訊區塊"><button data-section="latest-panel">楓況與分享</button><button data-section="season-panel">歷年時間</button><button data-section="species-panel">品種</button><button data-section="blog-photos">旅遊文章</button><button data-section="location-disclosure">官方資訊</button></nav></div><div class="detail-body">${latestBlock(p)}<section class="season-panel"><div class="panel-title"><h3>歷年賞楓時間與秋色照片</h3><span class="badge" style="--c:${s.color};--bg:${s.bg}">${s.name}</span></div><div class="dates-label">所選月份 ${escapeHTML(month)}・歷年及一般季節參考</div><div class="dates">${escapeHTML(p.dates)}</div><p class="reference-note">歷年時間僅供參考，今年轉色可能提前或延後。</p><details class="season-source"><summary>季節來源與說明</summary><div class="source-line">${p.source?escapeHTML(p.source):'尚無季節來源'}${p.source_url?` · <a href="${escapeHTML(p.source_url)}" target="_blank" rel="noopener noreferrer">來源 ↗</a>`:''}</div><div class="source-line">${escapeHTML(p.note||'')}${p.checked_at?`<br>來源查核：${escapeHTML(p.checked_at.slice(0,10))}（不是觀測日期）`:''}</div></details>${historicalPhotosBlock(p)}</section>${relatedRoutesBlock(p)}${speciesBlock(p)}<details class="location-disclosure" open><summary>官方資訊跟即時影像</summary><div class="location-info">${officialInfoLink(p)}<div class="location-heading">景點位置</div><strong class="location-address">${escapeHTML(p.region)} · ${escapeHTML(p.city)}</strong><div class="coordinates">緯度 ${Number(p.lat).toFixed(5)}° N<br>經度 ${Number(p.lon).toFixed(5)}° E</div>${escapeHTML(p.category)} · ${escapeHTML(p.coordinate_scope)}${p.intro?`<p class="reference-note"><strong>景點特色：</strong>${escapeHTML(p.intro)}</p>`:''}${p.notice_url?`<br><a href="${escapeHTML(p.notice_url)}" target="_blank" rel="noopener noreferrer">查看開放公告 ↗</a>`:''}${navigationLink(p)}${liveCamerasBlock(p)}</div></details><div class="detail-footer"><span>資料依已核對來源顯示</span><button class="save" aria-pressed="${saved.has(p.id)}">${saved.has(p.id)?'♥ 已收藏':'♡ 收藏景點'}</button></div></div>`;
  deduplicateDetailLinks($('#detail'));
- $('#detail').querySelectorAll('[data-section]').forEach(button=>{button.onclick=()=>{const target=$('#detail').querySelector('.'+button.dataset.section);if(target){if(target.tagName==='DETAILS')target.open=true;const head=$('#detail').querySelector('.detail-head');$('#detail').scrollTop=target.offsetTop-head.offsetHeight-14;}};});
+ $('#detail').querySelectorAll('[data-section]').forEach(button=>{button.onclick=()=>{const target=$('#detail').querySelector('.'+button.dataset.section);if(target){if(target.tagName==='DETAILS')target.open=true;const head=$('#detail').querySelector('.detail-head');const container=$('#detail');container.scrollTop+=target.getBoundingClientRect().top-container.getBoundingClientRect().top-head.offsetHeight-14;}};});
  $('#detail').querySelectorAll('.share-preview img').forEach(img=>{img.onerror=()=>{img.hidden=true;img.nextElementSibling.hidden=false;};});
  $('#detail').querySelectorAll('.history-photo img').forEach(img=>{img.onerror=()=>{img.closest('.photo-image-link').hidden=true;img.closest('.history-photo').querySelector('.photo-unavailable').hidden=false;};});
  $('#detail').querySelectorAll('.photo-image-link').forEach(link=>{link.onclick=e=>{e.preventDefault();openPhotoViewer(link);};});
@@ -328,10 +340,21 @@ function renderDetail(){
  $('.save').onclick=()=>{if(saved.has(p.id))saved.delete(p.id);else saved.add(p.id);try{localStorage.setItem('maple-saved',JSON.stringify([...saved]));}catch{}render();};
 }
 
-function choose(id){fittedView=false;selected=id;const p=places.find(p=>p.id===id);if(p){scale=Math.max(scale,4);panX=-(p.x-400)*scale;panY=-(p.y-450)*scale;transform();}$('#sidebar').classList.remove('open');$('#mobile-list').textContent='☰ 景點清單';$('#mobile-list').setAttribute('aria-expanded','false');render();}
+function choose(id){
+ fittedView=false;selected=id;
+ const p=places.find(p=>p.id===id);if(!p)return;
+ scale=Math.max(scale,4);
+ $('#sidebar').classList.remove('open');$('#mobile-list').textContent='☰ 景點清單';$('#mobile-list').setAttribute('aria-expanded','false');render();
+ const mapRect=svg.getBoundingClientRect(),card=$('#detail').getBoundingClientRect();
+ const target=svg.createSVGPoint();
+ target.x=innerWidth>=1051?mapRect.left+Math.max(90,card.left-mapRect.left)/2:mapRect.left+mapRect.width/2;
+ target.y=innerWidth<=1050&&card.top>mapRect.top?mapRect.top+(card.top-mapRect.top)/2:mapRect.top+mapRect.height/2;
+ const q=target.matrixTransform(svg.getScreenCTM().inverse());
+ panX=q.x-400-(p.x-400)*scale;panY=q.y-450-(p.y-450)*scale;transform();
+}
 $('#list').onclick=e=>{let el=e.target.closest('[data-id]');if(el)choose(el.dataset.id);};$('#markers').onclick=markerAction;$('#markers').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();markerAction(e);}};
 $('#region').onchange=e=>{region=e.target.value;county='all';populateCounties();selected=null;render();};$('#county').onchange=e=>{county=e.target.value;selected=null;render();};
-$('#search').oninput=e=>{query=e.target.value.trim();render();};$('#month').onchange=e=>{month=e.target.value;loadPlaces();};$('.filters').onclick=e=>{let b=e.target.closest('[data-filter]');if(!b)return;filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(el=>el.classList.toggle('active',el===b));render();};$('#mobile-list').onclick=()=>{const open=$('#sidebar').classList.toggle('open');$('#mobile-list').textContent=open?'× 關閉清單':'☰ 景點清單';$('#mobile-list').setAttribute('aria-expanded',String(open));};
+$('#search').oninput=e=>{query=e.target.value.trim();render();};$('#month').onchange=e=>{month=e.target.value;loadPlaces();};$('.filters').onclick=e=>{let b=e.target.closest('[data-filter]');if(!b)return;filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(el=>el.classList.toggle('active',el===b));render();};$('#mobile-list').onclick=()=>{const open=$('#sidebar').classList.toggle('open');if(open){selected=null;renderDetail();}$('#mobile-list').textContent=open?'× 關閉清單':'☰ 景點清單';$('#mobile-list').setAttribute('aria-expanded',String(open));};
 const world=$('#map-world'),svg=$('#map-svg');function transform(){world.setAttribute('transform',`translate(${panX} ${panY}) translate(400 450) scale(${scale}) translate(-400 -450)`);renderMarkers();}function zoom(f){fittedView=false;const before=scale;scale=Math.max(.4,Math.min(10,scale*f));panX*=scale/before;panY*=scale/before;transform();}$('#zoom-in').onclick=()=>zoom(1.2);$('#zoom-out').onclick=()=>zoom(1/1.2);$('#reset').onclick=()=>{fitIsland();transform();};$('#map').onwheel=e=>{e.preventDefault();zoom(e.deltaY>0?1/1.08:1.08);};
 let pointers=new Map(),lastDistance=null,drag=null,moved=false;
 function point(e){const p=svg.createSVGPoint();p.x=e.clientX;p.y=e.clientY;return p.matrixTransform(svg.getScreenCTM().inverse());}
@@ -342,9 +365,13 @@ function fitIsland(){
  const boxes=[...document.querySelectorAll('.coastline .island')].map(p=>p.getBBox()).filter(b=>b.width>0&&b.height>0);
  const b=boxes.sort((a,b)=>b.width*b.height-a.width*a.height)[0];if(!b)return;
  const rect=svg.getBoundingClientRect(),unit=Math.min(rect.width/800,rect.height/900);if(!unit)return;
- const padding=28/unit;
- scale=Math.max(.4,Math.min((800-padding*2)/b.width,(900-padding*2)/b.height));
- panX=-(b.x+b.width/2-400)*scale;panY=-(b.y+b.height/2-450)*scale;fittedView=true;
+ const legend=document.querySelector('.legend');
+ const reservedBottom=innerWidth<=700&&legend?legend.getBoundingClientRect().height+16:0;
+ const padding=24;
+ scale=Math.max(.4,Math.min(10,(rect.width-padding*2)/unit/b.width,(rect.height-reservedBottom-padding*2)/unit/b.height));
+ const point=svg.createSVGPoint();point.x=rect.left+rect.width/2;point.y=rect.top+(rect.height-reservedBottom)/2;
+ const q=point.matrixTransform(svg.getScreenCTM().inverse());
+ panX=q.x-400-(b.x+b.width/2-400)*scale;panY=q.y-450-(b.y+b.height/2-450)*scale;fittedView=true;
 }
 globalThis.addEventListener?.('resize',()=>{if(fittedView&&!selected)fitIsland();transform();});
 if(globalThis.ResizeObserver)new ResizeObserver(()=>{if(fittedView&&!selected)fitIsland();transform();}).observe($('#map'));
@@ -405,3 +432,6 @@ new ResizeObserver(()=>renderMarkers()).observe(svg);
 $('#photo-viewer-close').onclick=()=>$('#photo-dialog').close();
 $('#photo-dialog').onclick=e=>{if(e.target===$('#photo-dialog')){const r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.target.close();}};
 $('#photo-viewer-zoom').onclick=()=>{const zoomed=$('#photo-dialog').classList.toggle('photo-zoomed');$('#photo-viewer-zoom').setAttribute('aria-pressed',String(zoomed));$('#photo-viewer-zoom').textContent=zoomed?'適合畫面':'放大照片';};
+
+// A predictable dismissal on phones, tablets and computers.
+document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;if(!document.querySelector('#photo-dialog')?.open&&selected){selected=null;renderDetail();}if($('#sidebar').classList.contains('open'))$('#close-list').click();});

@@ -23,12 +23,16 @@
       {
         "label": "景觀平台",
         "url": "https://www.forest.gov.tw/0010162",
-        "scope": "園區景觀"
+        "scope": "園區景觀",
+        "link_checked_at": "2026-10-09",
+        "link_check_method": "替代網頁讀取"
       },
       {
         "label": "蹦蹦車站",
         "url": "https://www.forest.gov.tw/0010160",
-        "scope": "園區景觀"
+        "scope": "園區景觀",
+        "link_checked_at": "2026-10-09",
+        "link_check_method": "替代網頁讀取"
       }
     ],
     "official_facebook_url": "https://www.facebook.com/tps100.forest/",
@@ -47,7 +51,7 @@
     ],
     "official_info_url": "https://www.taiwan.net.tw/m1.aspx?id=618&sno=0001016",
     "official_info_label": "交通部觀光署・景點資訊",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -80,7 +84,7 @@
     "blog_photo_links": [],
     "official_info_url": "https://newtaipei.travel/zh-tw/attractions/detail/402390",
     "official_info_label": "新北市觀光旅遊網",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -134,9 +138,9 @@
         "summary": "記錄殿旁楓紅、橋景與順遊山徑。"
       }
     ],
-    "official_info_url": "https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_382000000a_109859",
-    "official_info_label": "交通部觀光署・景點資訊",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_url": "https://media.taiwan.net.tw/zh-tw/portal/travel/details/attraction_382000000a_109859",
+    "official_info_label": "交通部觀光署・中文景點資訊",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -169,7 +173,9 @@
       {
         "label": "滿月圓園區",
         "url": "https://www.forest.gov.tw/0010163",
-        "scope": "園區景觀"
+        "scope": "園區景觀",
+        "link_checked_at": "2026-10-09",
+        "link_check_method": "替代網頁讀取"
       }
     ],
     "official_facebook_url": "https://www.facebook.com/ManyueyuanNationalForest/",
@@ -188,7 +194,7 @@
     ],
     "official_info_url": "https://www.taiwan.net.tw/m1.aspx?id=r150&sno=0001016",
     "official_info_label": "交通部觀光署・景點資訊",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -245,7 +251,7 @@
     "official_website_provided_at": "2026-10-08",
     "official_info_url": "https://media.taiwan.net.tw/zh-tw/portal/travel/details/attraction_376440000a_000444",
     "official_info_label": "交通部觀光署・軍艦岩（資料由新竹縣政府提供）",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "official_alternate_links": [
       {
         "label": "新竹縣旅遊網・軍艦岩景點介紹",
@@ -294,7 +300,7 @@
     ],
     "official_info_url": "https://www.tad.gov.tw/m1.aspx?id=A12-00490&sNo=0001016",
     "official_info_label": "交通部觀光署・景點資訊",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -349,7 +355,7 @@
     ],
     "official_info_url": "https://www.taiwan.net.tw/m1.aspx?id=9486&sno=0001016",
     "official_info_label": "交通部觀光署・景點資訊",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -379,7 +385,9 @@
       {
         "label": "東眼山園區",
         "url": "https://www.forest.gov.tw/0010164",
-        "scope": "園區景觀"
+        "scope": "園區景觀",
+        "link_checked_at": "2026-10-09",
+        "link_check_method": "替代網頁讀取"
       }
     ],
     "official_facebook_url": "https://www.facebook.com/DYSNEC/",
@@ -388,7 +396,7 @@
     "blog_photo_links": [],
     "official_info_url": "https://www.taiwan.net.tw/m1.aspx?id=2485&sno=0001016",
     "official_info_label": "交通部觀光署・景點資訊",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -416,12 +424,16 @@
       {
         "label": "角板山生態池",
         "url": "https://travel.tycg.gov.tw/zh-tw/multimedia/live-camera/15",
-        "scope": "公園景觀"
+        "scope": "公園景觀",
+        "link_checked_at": "2026-10-09",
+        "link_check_method": "HTTP讀取"
       },
       {
         "label": "角板山思親亭",
         "url": "https://travel.tycg.gov.tw/zh-tw/multimedia/live-camera/53",
-        "scope": "公園景觀"
+        "scope": "公園景觀",
+        "link_checked_at": "2026-10-09",
+        "link_check_method": "HTTP讀取"
       }
     ],
     "blog_photo_links": [
@@ -437,7 +449,7 @@
     ],
     "official_info_url": "https://www.taiwan.net.tw/m1.aspx?id=775&sno=0001016",
     "official_info_label": "交通部觀光署・景點資訊",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -467,7 +479,9 @@
       {
         "label": "石門水庫",
         "url": "https://travel.tycg.gov.tw/zh-tw/multimedia/live-camera/3",
-        "scope": "水庫景觀"
+        "scope": "水庫景觀",
+        "link_checked_at": "2026-10-09",
+        "link_check_method": "HTTP讀取"
       }
     ],
     "blog_photo_links": [
@@ -483,7 +497,7 @@
     ],
     "official_info_url": "https://www.taiwan.net.tw/m1.aspx?id=2540&sno=0001016",
     "official_info_label": "交通部觀光署・景點資訊",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -514,7 +528,9 @@
       {
         "label": "拉拉山遊客中心",
         "url": "https://travel.tycg.gov.tw/zh-tw/multimedia/live-camera/2",
-        "scope": "周邊遊客中心，非神木步道"
+        "scope": "周邊遊客中心，非神木步道",
+        "link_checked_at": "2026-10-09",
+        "link_check_method": "HTTP讀取"
       }
     ],
     "official_facebook_url": "https://www.facebook.com/LalashanNationalForest/",
@@ -542,7 +558,7 @@
     ],
     "official_info_url": "https://www.taiwan.net.tw/m1.aspx?id=r147&sno=0001016",
     "official_info_label": "交通部觀光署・景點資訊",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -595,9 +611,9 @@
         "summary": "分享春季紅色新葉與園區外圍動線，屬春楓而非秋季轉紅。"
       }
     ],
-    "official_info_url": "https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_379000000a_002180",
-    "official_info_label": "交通部觀光署・景點資訊",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_url": "https://media.taiwan.net.tw/zh-tw/portal/travel/details/attraction_379000000a_002180",
+    "official_info_label": "交通部觀光署・中文景點資訊",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -630,7 +646,7 @@
     "blog_photo_links": [],
     "official_info_url": "https://www.taiwan.net.tw/m1.aspx?id=2489&sno=0001016",
     "official_info_label": "交通部觀光署・景點資訊",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -665,7 +681,7 @@
     "blog_photo_links": [],
     "official_info_url": "https://www.tad.gov.tw/m1.aspx?id=R128&sNo=0001016",
     "official_info_label": "交通部觀光署・景點資訊",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -736,7 +752,7 @@
     ],
     "official_info_url": "https://www.taiwan.net.tw/m1.aspx?id=2146&sno=0001016",
     "official_info_label": "交通部觀光署・景點資訊",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -783,7 +799,7 @@
     ],
     "official_info_url": "https://www.taiwan.net.tw/m1.aspx?id=c100_247&sno=0001016",
     "official_info_label": "交通部觀光署・景點資訊",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -841,7 +857,9 @@
       {
         "label": "武陵農場官方直播",
         "url": "https://www.wuling-farm.com.tw/tw/album/video.php?kind=11",
-        "scope": "茶莊、收費站等官方鏡頭入口"
+        "scope": "茶莊、收費站等官方鏡頭入口",
+        "link_checked_at": "2026-10-09",
+        "link_check_method": "HTTP讀取"
       }
     ],
     "official_facebook_url": "https://www.facebook.com/WulingFarm0510/",
@@ -860,7 +878,7 @@
     ],
     "official_info_url": "https://www.taiwan.net.tw/m1.aspx?id=9547&sno=0001016",
     "official_info_label": "交通部觀光署・景點資訊",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -907,7 +925,7 @@
     ],
     "official_info_url": "https://www.tad.gov.tw/m1.aspx?id=694&sNo=0001016",
     "official_info_label": "交通部觀光署・景點資訊",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -965,7 +983,7 @@
     ],
     "official_info_url": "https://www.trimt-nsa.gov.tw/zh-tw/attraction/83/",
     "official_info_label": "參山國家風景區管理處",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -1008,7 +1026,9 @@
       {
         "label": "福壽山官方直播",
         "url": "https://fushoushan.com.tw/Outer/LiveStream",
-        "scope": "官方多鏡頭入口"
+        "scope": "官方多鏡頭入口",
+        "link_checked_at": "2026-10-09",
+        "link_check_method": "HTTP讀取"
       }
     ],
     "official_facebook_url": "https://www.facebook.com/fssfarm/",
@@ -1028,7 +1048,7 @@
     ],
     "official_info_url": "https://www.taiwan.net.tw/m1.aspx?id=695&sno=0001016",
     "official_info_label": "交通部觀光署・景點資訊",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -1112,7 +1132,7 @@
     ],
     "official_info_url": "https://www.taiwan.net.tw/m1.aspx?id=r24&sno=0001016",
     "official_info_label": "交通部觀光署・景點資訊",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -1153,7 +1173,7 @@
     ],
     "official_info_url": "https://recreation.forest.gov.tw/Trail/RT?tr_id=060",
     "official_info_label": "林業保育署・台灣山林悠遊網",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -1194,7 +1214,7 @@
     ],
     "official_info_url": "https://www.trimt-nsa.gov.tw/zh-tw/attraction/831/",
     "official_info_label": "參山國家風景區管理處",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -1239,7 +1259,9 @@
       {
         "label": "八仙山園區",
         "url": "https://www.forest.gov.tw/0010158",
-        "scope": "園區景觀"
+        "scope": "園區景觀",
+        "link_checked_at": "2026-10-09",
+        "link_check_method": "替代網頁讀取"
       }
     ],
     "official_facebook_url": "https://www.facebook.com/BSSNC.tw/",
@@ -1259,7 +1281,7 @@
     ],
     "official_info_url": "https://www.tad.gov.tw/m1.aspx?id=R5&sNo=0001016",
     "official_info_label": "交通部觀光署・景點資訊",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -1302,7 +1324,7 @@
     ],
     "official_info_url": "https://recreation.forest.gov.tw/Trail/RT?tr_id=047",
     "official_info_label": "林業保育署・台灣山林悠遊網",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -1333,12 +1355,16 @@
       {
         "label": "林業鐵路",
         "url": "https://www.forest.gov.tw/0010155",
-        "scope": "園區景觀"
+        "scope": "園區景觀",
+        "link_checked_at": "2026-10-09",
+        "link_check_method": "替代網頁讀取"
       },
       {
         "label": "小笠原平台",
         "url": "https://www.forest.gov.tw/0010156",
-        "scope": "園區景觀"
+        "scope": "園區景觀",
+        "link_checked_at": "2026-10-09",
+        "link_check_method": "替代網頁讀取"
       }
     ],
     "official_facebook_url": "https://www.facebook.com/AlishanForest/",
@@ -1378,7 +1404,7 @@
     ],
     "official_info_url": "https://www.taiwan.net.tw/m1.aspx?id=10949&sno=0001016",
     "official_info_label": "交通部觀光署・景點資訊",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "viewing_areas": [
       {
         "name": "森林遊樂區內",
@@ -1443,7 +1469,9 @@
       {
         "label": "里佳資訊站",
         "url": "https://www.ali-nsa.net/zh-tw/live-camera/3",
-        "scope": "部落周邊，非賞楓步道內"
+        "scope": "部落周邊，非賞楓步道內",
+        "link_checked_at": "2026-10-09",
+        "link_check_method": "HTTP讀取"
       }
     ],
     "blog_photo_links": [
@@ -1460,7 +1488,7 @@
     ],
     "official_info_url": "https://www.ali-nsa.net/zh-tw/attractions/detail/194",
     "official_info_label": "阿里山國家風景區管理處",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -1501,7 +1529,7 @@
     ],
     "official_info_url": "https://www.siraya-nsa.gov.tw/zh-tw/attractions/detail/157",
     "official_info_label": "西拉雅國家風景區管理處",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -1550,7 +1578,7 @@
     ],
     "official_info_url": "https://www.taiwan.net.tw/m1.aspx?id=A12-00297&sNo=0001016",
     "official_info_label": "交通部觀光署・景點資訊",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -1616,7 +1644,7 @@
     ],
     "official_info_url": "https://recreation.forest.gov.tw/Trail/RT?tr_id=013",
     "official_info_label": "林業保育署・台灣山林悠遊網",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",
@@ -1664,7 +1692,7 @@
     ],
     "official_info_url": "https://recreation.forest.gov.tw/Trail/RT?tr_id=025",
     "official_info_label": "林業保育署・台灣山林悠遊網",
-    "official_info_checked_at": "2026-10-08",
+    "official_info_checked_at": "2026-10-09",
     "photo_search_checked_at": "2026-10-08",
     "photo_search_note": "優先收錄較新的賞楓／賞葉行程、路線或遊記；排除新聞、無關內容及以落葉後景觀為主的文章。",
     "article_checked_at": "2026-10-08",

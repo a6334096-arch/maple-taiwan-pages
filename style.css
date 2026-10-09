@@ -311,3 +311,30 @@ header{gap:8px}.brand{min-width:0;flex-shrink:0}.header-right{min-width:0;gap:8p
 
 /* Keep recorded leaf color while distinguishing older reports. */
 .forecast-swatch.stale-leaf{outline:1.5px dashed #7b8175;outline-offset:2px}
+
+/* 2026-10-09: consistent readable cards and official entries across devices. */
+.official-links a{display:block;min-height:44px;padding:10px 12px;border:1px solid #e2dfcf;border-radius:10px;background:#f6f4e9;font-size:13px;font-weight:600;text-decoration:none}
+.official-links a:hover{background:#ecefdc;border-color:#adc09e}
+.official-links a:focus-visible{outline:3px solid #b87546;outline-offset:2px}
+.detail-head{position:sticky;top:0;z-index:2;border-bottom:1px solid var(--line)}
+.detail-nav{overflow:visible}.detail-nav button{min-height:40px;font-size:12px}
+.detail-close{min-width:44px;min-height:44px}
+.detail{scroll-padding-top:160px}.detail-body{font-size:14px;line-height:1.7}
+.detail .reference-note,.detail .foliage-meta,.detail .share-source,.detail .source-line{font-size:12px}
+.location-disclosure>summary{min-height:44px;padding:10px 0;font-size:14px}
+.forecast-row{gap:10px;grid-template-columns:34px minmax(0,1fr) minmax(88px,29%);padding:13px 6px}
+.forecast-place strong{font-size:15px;line-height:1.6}.forecast-place small{font-size:12px}.forecast-period{font-size:12px;line-height:1.7}
+.map-area:has(.detail:not([hidden])) #map{width:100%}
+@media(min-width:1051px){main{grid-template-columns:clamp(330px,28vw,410px) minmax(0,1fr)}.detail{top:72px;bottom:16px;width:min(430px,48%);max-height:calc(100% - 88px)}.detail-head h2{font-size:24px}.legend.season-color-legend{font-size:12px}}
+@media(min-width:701px) and (max-width:1050px){.detail{top:auto;bottom:16px;max-height:70%;width:auto;left:12px;right:12px}}
+@media(max-width:700px){
+#sidebar{width:calc(100% - 16px);max-width:420px;padding:16px 14px 24px}
+.detail{top:auto;left:8px;right:8px;bottom:calc(8px + env(safe-area-inset-bottom));width:auto;max-height:76%;border-radius:18px}
+.detail-head{padding:16px 16px 12px}.detail-head h2{font-size:21px;padding-right:22px}.detail-body{padding:16px}
+.detail-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.detail-nav button{font-size:12px;padding:8px 5px;white-space:normal}
+.map-controls button{width:44px;height:44px}.map-toolbar .mobile-list{min-height:44px;font-size:12px}
+.map-area:has(.detail:not([hidden])) .legend{visibility:hidden}
+.forecast-row{grid-template-columns:30px minmax(0,1fr) minmax(74px,27%);gap:8px}.forecast-place strong{font-size:14px}.forecast-place small,.forecast-period{font-size:11px}
+.legend .color-legend-heading{font-size:12px}.legend .color-phase{font-size:10px}.legend .color-legend-meta,.legend .color-legend-note{font-size:10px}.legend.season-color-legend .terrain-key{font-size:9px}
+}
+@media(max-width:360px){.detail-head h2{font-size:19px}.detail-nav{grid-template-columns:repeat(2,minmax(0,1fr))}.forecast-row{grid-template-columns:28px minmax(0,1fr) 72px}.map-toolbar #map-location{font-size:13px}}
