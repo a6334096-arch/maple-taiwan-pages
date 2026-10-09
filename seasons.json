@@ -1,0 +1,462 @@
+{
+  "taipingshan": {
+    "months": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "period": "紫葉槭一般約 4～10 月",
+    "source": "太平山官方・春夏來太平山欣賞楓紅美景",
+    "source_url": "https://tps.forest.gov.tw/TPSWeb/wSite/ct?ctNode=251&mp=1&xItem=6668",
+    "note": "此筆專指太平山莊中央階梯的紫葉槭。春夏新葉即呈紫紅，不能套用一般秋季轉紅規則；來源為一般季節介紹，不是 2026 年觀測。",
+    "checked_at": "2026-10-07T10:07:53+08:00"
+  },
+  "fengshuhu": {
+    "months": [
+      11,
+      12
+    ],
+    "period": "青楓一般約 11～12 月",
+    "source": "淡水區公所・大屯飛翠",
+    "source_url": "https://www.tamsui.ntpc.gov.tw/home.jsp?act=be4f48068b2b0031&dataserno=bfe263e24af71758b6b84af3cb94bd10&id=4941bfa3d64b3bfd",
+    "note": "官方說明青楓於 11、12 月綠葉變紅；不是木蓮花季的日期。 歷年及一般季節參考，不代表今年逐日預測或目前楓況。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "gongbei": {
+    "months": [
+      11,
+      12,
+      1
+    ],
+    "period": "一般約 11 月下旬至翌年 1 月上旬",
+    "source": "官方景點／季節介紹",
+    "source_url": "https://newtaipei.travel/zh-tw/attractions/detail/109859",
+    "note": "槭樹賞楓季參考；實際葉色仍依當年氣候。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "manyueyuan": {
+    "months": [
+      12
+    ],
+    "period": "一般約 12 月",
+    "source": "林業保育署・滿月圓國家森林遊樂區介紹",
+    "source_url": "https://recreation.forest.gov.tw/forest/RA?typ_id=0200001",
+    "note": "園區季節介紹提到每年約 12 月的楓紅；不同海拔、步道與樹種的轉色時間不同。 歷年及一般季節資料僅供安排行程，不能代表今年轉紅日期或目前楓況。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "xiuluan": {
+    "months": null,
+    "period": "秋季（官方未列明確月份）",
+    "source": "官方景點／季節介紹",
+    "source_url": "https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_376440000a_000450",
+    "note": "吊橋周邊楓香林；圖示採官方秀巒景點代表位置。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "smangus": {
+    "months": [
+      12
+    ],
+    "period": "部落官方：楓葉季通常在 12 月",
+    "source": "司馬庫斯部落・2026/7/28 訂房公告",
+    "source_url": "https://smangus.org/news.php?kdid=udnblog",
+    "note": "季節參考；不是今年已轉紅的紀錄。進出部落需遵守道路時段管制。 歷年及一般季節參考，不代表今年逐日預測或目前楓況。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "xiakelo": {
+    "months": null,
+    "period": "歷年參考：約 11 月起（結束月份未確認）",
+    "source": "林業保育署新竹分署・2022 年霞喀羅步道公告",
+    "source_url": "https://hsinchu.forest.gov.tw/news/0070350",
+    "note": "2022 年公告提到每年約 11 月起遊客前來賞紅葉，但沒有明列結束月份，所以不推估完整月份範圍。2026-10-07 查核步道頁顯示暫停開放至 10 月 31 日，請以最新路況為準。 歷年及一般季節資料僅供安排行程，不能代表今年轉紅日期或目前楓況。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "dongyanshan": {
+    "months": null,
+    "period": "秋季（官方未列明確月份）",
+    "source": "林業保育署新竹分署・2023 年秋季遊程介紹",
+    "source_url": "https://hsinchu.forest.gov.tw/news/0072461",
+    "note": "官方介紹指出入秋後東眼山林道楓葉呈紅黃色；屬歷年秋季參考，非今年觀測。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "jiaobanshan": {
+    "months": null,
+    "period": "深秋（官方未列明確月份）",
+    "source": "官方景點／季節介紹",
+    "source_url": "https://www.taiwan.net.tw/m1.aspx?id=775&sno=0001016",
+    "note": "月份待確認；實際葉色與開放狀況請查閱官方公告。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "shimen": {
+    "months": [
+      11,
+      12
+    ],
+    "period": "一般約 11～12 月",
+    "source": "桃園觀光導覽網・石門水庫行",
+    "source_url": "https://travel.tycg.gov.tw/zh-tw/travel/shihmen-reservoir-tour",
+    "note": "官方介紹的賞楓區域包括高線公路、槭樹公園與楓林步道；實際轉色仍依當年天候。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "lalashan": {
+    "months": [
+      10,
+      11,
+      12
+    ],
+    "period": "一般季節參考：10～12 月",
+    "source": "桃園觀光導覽網・四季賞花情報",
+    "source_url": "https://travel.tycg.gov.tw/zh-tw/travel/flower-viewing",
+    "note": "桃園官方將拉拉山、北橫與石門水庫列為 10～12 月賞楓地點。這是區域季節範圍，不是神木區每株楓樹的高峰日期。 歷年及一般季節資料僅供安排行程，不能代表今年轉紅日期或目前楓況。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "taipei-aowanda": {
+    "months": [
+      3,
+      4
+    ],
+    "period": "春季約 3～4 月",
+    "source": "官方景點／季節介紹",
+    "source_url": "https://media.taiwan.net.tw/en-us/portal/travel/details/attraction_379000000a_002180",
+    "note": "嫁接日本品種的新芽呈紅色，與秋季轉紅不同；官府介紹引用園方說明。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "huisun": {
+    "months": [
+      9,
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "period": "歷年季節年表：9 月至翌年 2 月",
+    "source": "中興大學鹿鳴文化資產中心・惠蓀林場大觀園",
+    "source_url": "https://deer.nchu.edu.tw/epaper/休閒、知性、寓教於樂──惠蓀林場大觀園/",
+    "note": "中興大學 2010 年文章的花季年表分列 9～12 月及 12～2 月楓紅。屬較早期、較寬的季節範圍，不能視為六個月皆為最佳賞楓期；山嵐小徑與不同海拔可能有差異。 歷年及一般季節資料僅供安排行程，不能代表今年轉紅日期或目前楓況。",
+    "checked_at": "2026-10-07T12:01:44+08:00"
+  },
+  "qingjing": {
+    "months": [
+      11,
+      12,
+      1
+    ],
+    "period": "一般約 11 月至翌年 1 月",
+    "source": "南投旅遊網・南投賞花攻略",
+    "source_url": "https://travel.nantou.gov.tw/article/flowering-season/",
+    "note": "官方秋冬賞葉推薦包括楓紅與落羽松；落羽松並非楓樹。各區轉色不一致。 歷年及一般季節參考，不代表今年逐日預測或目前楓況。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "aowanda": {
+    "months": [
+      11,
+      12,
+      1
+    ],
+    "period": "一般約 11 月至翌年 1 月",
+    "source": "林業保育署南投分署・常見問答",
+    "source_url": "https://nantou.forest.gov.tw/search/faqs?p=0",
+    "note": "一般季節會隨氣候改變；不是今年楓況或轉紅預測。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "shanlinxi": {
+    "months": [
+      10,
+      11
+    ],
+    "period": "2024 年紀錄參考：10 月至 11 月上旬",
+    "source": "南投旅遊網・2024-10-18 杉林溪秋色報導",
+    "source_url": "https://travel.nantou.gov.tw/news-press/杉林溪提前換季/",
+    "note": "南投縣官方旅遊網轉載園方受訪報導：以往約 10 月下旬起，2024 年因天候提早至 10 月初，當年預估到 11 月上旬。這是 2024 年歷史案例，不是固定逐年日期；包含楓葉與銀杏秋色，並非今年楓況。 歷年及一般季節資料僅供安排行程，不能代表今年轉紅日期或目前楓況。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "wuling": {
+    "months": [
+      11,
+      12,
+      1
+    ],
+    "period": "一般約 11 月中旬至翌年 1 月",
+    "source": "武陵農場・四季景觀",
+    "source_url": "https://www.wuling-farm.com.tw/tw/travel/index.php?num=26",
+    "note": "官網分列 11 月中旬～12 月的楓葉、銀杏，以及 12 月下旬～1 月的楓葉；不同區域與氣候會有差異。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "dongshi-forest": {
+    "months": [
+      11,
+      12
+    ],
+    "period": "一般約 11～12 月",
+    "source": "臺中觀光旅遊網・賞花專區楓葉介紹",
+    "source_url": "https://travel.taichung.gov.tw/zh-tw/tag/list?categories=%E8%B3%9E%E8%8A%B1%E5%B0%88%E5%8D%80",
+    "note": "指東勢區勢林街的遊樂區，非中興大學同名實驗林。園內設有十二甲賞楓林區。 歷年及一般季節參考，不代表今年逐日預測或目前楓況。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "maple-valley": {
+    "months": null,
+    "period": "各季有不同葉色，依品種而異",
+    "source": "參山國家風景區・楓之谷",
+    "source_url": "https://www.trimt-nsa.gov.tw/zh-tw/attraction/83/",
+    "note": "梨山賓館旁；紫葉楓等品種其他季節也有紅葉，不能當作秋季轉紅或全年盛期。 歷年及一般季節參考，不代表今年逐日預測或目前楓況。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "fushoushan": {
+    "months": [
+      10,
+      11
+    ],
+    "period": "一般約 10～11 月",
+    "source": "福壽山農場・常見問答",
+    "source_url": "https://fushoushan.com.tw/Outer/QuestionAns",
+    "note": "鴛鴦湖畔約 10 月，松廬約 11 月；各區與品種賞楓期不同，仍須確認最新公告。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "daxueshan": {
+    "months": [
+      11,
+      12
+    ],
+    "period": "歷年參考：約 11 月下旬至 12 月下旬",
+    "source": "林業保育署・大雪山 2022／2024 年季節公告",
+    "source_url": "https://www.forest.gov.tw/news/0075085",
+    "note": "2022-11-01 官方介紹每年 11 月下旬起轉色；2024-12-10 公告記錄當年 12 月至下旬觀賞期。此範圍由兩筆官方資料整理，只作歷年參考，並非每年保證。另一來源：https://www.forest.gov.tw/bilingual/news/0070337 歷年及一般季節資料僅供安排行程，不能代表今年轉紅日期或目前楓況。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "yuanzui": {
+    "months": null,
+    "period": "官方未列明確賞楓月份",
+    "source": "官方景點／季節介紹",
+    "source_url": "https://recreation.forest.gov.tw/Topic/Topic?region=ALL&word=%E8%B3%9E%E6%A5%93",
+    "note": "官方賞楓主題推薦。地圖標示入口代表點，非完整路線；請先查閱官方步道現況。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "guguan": {
+    "months": null,
+    "period": "秋季（官方未列明確月份）",
+    "source": "參山國家風景區・谷關風景區",
+    "source_url": "https://www.trimt-nsa.gov.tw/zh-tw/attraction/831/",
+    "note": "官方介紹秋季楓紅，街區與周邊各路段轉色不同；不是八仙山園區的重複標記。 歷年及一般季節參考，不代表今年逐日預測或目前楓況。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "basianshan": {
+    "months": [
+      11,
+      12
+    ],
+    "period": "一般約 11～12 月",
+    "source": "臺中觀光旅遊網・賞花專區楓葉介紹",
+    "source_url": "https://travel.taichung.gov.tw/zh-tw/tag/list?categories=%E8%B3%9E%E8%8A%B1%E5%B0%88%E5%8D%80",
+    "note": "賞楓位置為森林遊樂區，不代表需要攀登八仙山主峰。 歷年及一般季節參考，不代表今年逐日預測或目前楓況。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "manabang": {
+    "months": [
+      12,
+      1,
+      2
+    ],
+    "period": "官方遊程參考：12 月至翌年 2 月",
+    "source": "農業部農村水保署・馬那邦休閒農業區四季遊程",
+    "source_url": "https://ezgo.ardswc.gov.tw/zh-tw/leisure-area/31/",
+    "note": "官方冬季賞楓遊程列 12～2 月，是行程安排範圍，不是整段期間都處於楓紅高峰。步道介紹亦提到深秋楓紅；不同海拔及樹種仍有差異。 歷年及一般季節資料僅供安排行程，不能代表今年轉紅日期或目前楓況。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "alishan": {
+    "months": [
+      12
+    ],
+    "period": "官方活動介紹以 12 月為賞楓季",
+    "source": "交通部觀光署・阿里山林鐵賞楓主題列車介紹",
+    "source_url": "https://www.taiwan.net.tw/m1.aspx?lid=081887&sNo=0001019",
+    "note": "來源介紹阿里山林鐵賞楓季，涵蓋林鐵支線沿途；不是全園逐月楓況，也不代表其他月份無紅葉。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "lijia-maple": {
+    "months": null,
+    "period": "秋冬（官方未列明確月份）",
+    "source": "阿里山國家風景區・里佳賞楓步道",
+    "source_url": "https://www.ali-nsa.net/zh-tw/attractions/detail/194",
+    "note": "賞楓步道位於里佳部落旁，169 縣道約 49.3K 至 50.1K；與阿里山森林遊樂區不同地點。 歷年及一般季節參考，不代表今年逐日預測或目前楓況。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "hongye-park": {
+    "months": [
+      12
+    ],
+    "period": "一般約 12 月中下旬開始轉紅",
+    "source": "官方景點／季節介紹",
+    "source_url": "https://www.siraya-nsa.gov.tw/zh-tw/attractions/detail/157",
+    "note": "來源提到 12 月中下旬轉紅；未據此推估後續月份或今年楓況。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "danongdafu": {
+    "months": [
+      12,
+      1
+    ],
+    "period": "一般約 12 月至翌年 1 月",
+    "source": "花東縱谷國家風景區・打卡景點",
+    "source_url": "https://www.erv-nsa.gov.tw/zh-tw/travel/check-in",
+    "note": "從服務中心往南，經七彩釣竿橋轉彎至南環自行車道。杜英也是變葉植物，並非楓樹。 歷年及一般季節參考，不代表今年逐日預測或目前楓況。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "taipingshan-beech": {
+    "months": [
+      10,
+      11
+    ],
+    "period": "歷年約 10 月中旬～11 月中旬",
+    "source": "林業保育署宜蘭分署・山毛櫸旺季說明",
+    "source_url": "https://www.forest.gov.tw/trail/news/0079343",
+    "note": "台灣山毛櫸秋季呈金黃色。單程 3.8 公里，原路折返；末段才可觀賞黃金林，往返需預留約 3～4 小時。 一般及歷年季節參考，不代表今年預測或目前葉色。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "beichatianshan": {
+    "months": [
+      10,
+      11
+    ],
+    "period": "一般約 10 月底～11 月初",
+    "source": "林業保育署・北插天山登山步道",
+    "source_url": "https://www.forest.gov.tw/0002746",
+    "note": "台灣山毛櫸秋季呈金黃色。原始山徑、體力需求高；進入插天山自然保留區須事先申請。部分舊路線暫停開放，請依官方公告規劃。 一般及歷年季節參考，不代表今年預測或目前葉色。",
+    "checked_at": "2026-10-09T00:01:28.678Z"
+  },
+  "_sync": {
+    "run_id": "6169e37b-758c-42c7-a2bb-cb5f5302e031",
+    "attempted_at": "2026-10-09T00:01:34.843Z",
+    "successful_sources": 29,
+    "failed_sources": 2,
+    "checks": {
+      "taipingshan": {
+        "status": "failed",
+        "message": "原官方頁列紫葉槭4～10月，另一官方季節頁列4～9月，期間仍不一致；保留原紀錄及舊查核日期。"
+      },
+      "fengshuhu": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "gongbei": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "manyueyuan": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "xiuluan": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "smangus": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "xiakelo": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "dongyanshan": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "jiaobanshan": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "shimen": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "lalashan": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "taipei-aowanda": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "huisun": {
+        "status": "failed",
+        "message": "中興大學鹿鳴歷史季節來源頁仍無法完整載入；保留原紀錄及舊查核日期。"
+      },
+      "qingjing": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "aowanda": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "shanlinxi": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "wuling": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "dongshi-forest": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "maple-valley": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "fushoushan": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "daxueshan": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "yuanzui": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "guguan": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "basianshan": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "manabang": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "alishan": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "lijia-maple": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "hongye-park": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "danongdafu": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "taipingshan-beech": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      },
+      "beichatianshan": {
+        "status": "success",
+        "message": "已於2026-10-09讀取並核對官方季節來源；原月份、年份與地點／樹種範圍無需修改。"
+      }
+    }
+  }
+}

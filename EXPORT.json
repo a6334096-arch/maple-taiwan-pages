@@ -1,0 +1,14 @@
+{
+  "source_project_id": "appgprj_6ac59ee1f1f8819183bd668661db7cb2",
+  "source_version": 72,
+  "source_commit": "8b894497f41c685de516f7099ad1a807fadc0f89",
+  "exported_at": "2026-10-09T00:47:10.839837+00:00",
+  "data_mode": "local-static-snapshot",
+  "place_count": 31,
+  "changes": [
+    "GitHub Pages relative photo paths",
+    "Current public seasonal and foliage JSON snapshot"
+  ],
+  "original_site_modified": false,
+  "github_modified": false
+}
