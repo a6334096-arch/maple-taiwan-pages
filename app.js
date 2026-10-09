@@ -205,10 +205,8 @@ function officialInfoLink(p){
   ...(p.official_alternate_links||[]),
   ...(!p.official_info_url&&!p.official_website_url?[{url:p.coordinate_source_url,label:'官方景點介紹'}]:[])
  ];
- const fb=publicShareUrl(p.official_facebook_url);
- if(fb)candidates.push({url:fb,label:p.official_facebook_kind==='recommended'?'官方推薦的在地 Facebook':'官方 Facebook・'+(p.official_facebook_name||p.name)});
  const seen=new Set();const links=candidates.filter(o=>{
-  try{const u=new URL(o.url);if(u.protocol!=='https:')return false;const key=linkDestination(u.href);if(seen.has(key))return false;seen.add(key);return true;}catch{return false;}
+  try{const u=new URL(o.url);if(u.protocol!=='https:'||/(^|\.)(facebook\.com|fb\.com|fb\.watch)$/.test(u.hostname))return false;const key=linkDestination(u.href);if(seen.has(key))return false;seen.add(key);return true;}catch{return false;}
  });
  return `<div class="official-links"><div class="location-heading">官方資訊</div>${links.length?links.map(o=>`<a href="${escapeHTML(o.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(o.label)} ↗</a>`).join(''):'<span>官方資訊待查核</span>'}</div>`;
 }
