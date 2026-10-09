@@ -395,3 +395,51 @@ header{gap:8px}.brand{min-width:0;flex-shrink:0}.header-right{min-width:0;gap:8p
 .article-description .share-note{margin:12px 0}
 .detail .article-disclaimer{font-size:12px;margin-top:16px}
 @media(max-width:700px){.detail-nav{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Comfortable responsive typography: one scale for cards and controls. */
+:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Microsoft JhengHei","Noto Sans TC",sans-serif;font-size:16px;--muted:#56665b}
+body{line-height:1.65;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+button,input,select{font-family:inherit}
+.brand{font-family:inherit;font-weight:700;letter-spacing:.12em}.brand small{font-size:9px;letter-spacing:.2em;line-height:1.5}
+.demo-pill,.text-button{font-size:12px}.text-button{min-height:44px}
+#sidebar .forecast-heading h2{font-family:inherit;font-size:22px;line-height:1.5;letter-spacing:0}
+#sidebar .search-box input,#sidebar select,#sidebar input[type=month]{font-size:16px;min-height:44px}
+#sidebar .period,#sidebar .location-filters,#sidebar .list-tools,#sidebar .list-heading{font-size:14px;line-height:1.6}
+#sidebar .forecast-tabs button,#sidebar .filters button{font-size:14px;min-height:44px;line-height:1.5}
+.forecast-row{padding:16px 6px;gap:10px;grid-template-columns:32px minmax(0,1fr) minmax(82px,28%)}
+.forecast-place strong{font-size:16px;font-weight:650;line-height:1.6;letter-spacing:0}
+.forecast-place small,.forecast-period{font-size:13px;line-height:1.75;color:#56665b}
+.sidebar-footer,.directory-note{font-size:12px;line-height:1.75}.list-heading b,.list-heading>span:last-child{font-size:12px}
+.detail{scroll-padding-top:190px}
+.detail-head h2{font-family:inherit;font-size:clamp(22px,1.6vw,26px);font-weight:700;line-height:1.45;padding-right:34px;letter-spacing:0}
+.detail-head>p{font-size:14px;line-height:1.7}
+.detail-body{font-size:16px;line-height:1.85;padding:24px}
+.detail-body h3,.latest-panel .foliage-panel h3{font-size:19px;line-height:1.6;font-weight:700;letter-spacing:0}
+.detail-body h4,.location-heading,.blog-photos>h4{font-size:16px;line-height:1.65;font-weight:650}
+.detail .reference-note,.detail .foliage-meta,.detail .share-source,.detail .source-line,.detail .species-note,.detail .camera-note,.detail .share-note,.detail .location-info{font-size:15px;line-height:1.85;color:#526257}
+.latest-panel .foliage-summary{font-size:17px;line-height:1.8;font-weight:600}
+.foliage-facts{font-size:14px;line-height:1.8;gap:10px}.foliage-facts>div{grid-template-columns:76px minmax(0,1fr);gap:12px}
+.detail .foliage-warning{font-size:14px;line-height:1.8}
+.detail .dates{font-size:clamp(19px,1.5vw,22px);line-height:1.7;letter-spacing:0;font-variant-numeric:tabular-nums}
+.detail .dates-label,.detail .coordinates,.detail .live-camera small,.detail .article-disclaimer,.history-photo .photo-credit,#photo-viewer-caption{font-size:13px;line-height:1.8;color:#59675d}
+.detail .species-tags span{font-size:15px;padding:7px 11px;line-height:1.6}
+.detail .share-button,.detail .official-links a,.detail .location-navigation,.detail .live-camera>a,.detail .foliage-links .share-button{font-size:15px;line-height:1.6;min-height:48px}
+.detail-nav button{font-size:14px;min-height:44px;line-height:1.5}
+.detail .article-title{font-size:16px;line-height:1.75;font-weight:650}
+.article-description>summary,.detail .season-source>summary,.location-disclosure>summary{font-size:14px;line-height:1.75;min-height:44px}
+.detail .season-panel,.detail .species-panel{margin-top:28px;padding-top:24px}
+.detail p{margin-top:12px;margin-bottom:14px}
+.cluster-place{font-size:16px;line-height:1.7;min-height:48px}.cluster-place small{font-size:13px}
+dialog h2{font-family:inherit;font-size:24px;line-height:1.5}dialog p{font-size:16px;line-height:1.85}
+@media(min-width:1051px){.detail{width:min(480px,52%)}.detail-body{padding:24px 26px}}
+@media(max-width:700px){
+.brand{font-size:23px}.brand small{font-size:8px}.text-button{font-size:12px}.demo-pill{font-size:10px}
+#sidebar .forecast-heading h2{font-size:21px}.forecast-row{grid-template-columns:28px minmax(0,1fr) 80px;padding:14px 3px;gap:8px}
+.forecast-place strong{font-size:15px}.forecast-place small,.forecast-period{font-size:12px}
+.map-toolbar .mobile-list{font-size:14px;min-height:44px}.map-toolbar #map-location{font-size:15px;line-height:1.5}
+.detail-head{padding:18px 16px 14px}.detail-head h2{font-size:22px}.detail-head>p{font-size:14px}
+.detail-body{padding:20px 16px;font-size:16px}.detail-body h3,.latest-panel .foliage-panel h3{font-size:18px}
+.detail .latest-panel{padding:16px 12px}.foliage-facts>div{grid-template-columns:70px minmax(0,1fr);gap:8px}
+.detail-nav{gap:8px}.detail-nav button{font-size:13px}.legend .color-legend-heading{font-size:13px}.legend .color-phase,.legend .color-legend-meta,.legend .color-legend-note{font-size:11px}
+}
+@media(max-width:360px){#sidebar .forecast-tabs button,#sidebar .filters button{font-size:13px}.forecast-row{grid-template-columns:26px minmax(0,1fr) 72px}.detail-head h2{font-size:21px}.detail-body{padding:18px 12px}.detail .latest-panel{padding:14px 10px}}
