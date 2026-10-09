@@ -159,39 +159,47 @@ function renderPlaceLabels(data){
   $('#markers').insertAdjacentHTML('beforeend',`<g class="place-map-label" transform="translate(${p.x} ${p.y})" aria-hidden="true"><text transform="scale(${1/scale})" y="34" text-anchor="middle">${escapeHTML(p.name.length>18?p.name.slice(0,17)+'…':p.name)}</text></g>`);
  }
 }
+let detailResetFrame = 0;
+function resetDetailScroll(){
+ const panel=$('#detail');
+ cancelAnimationFrame(detailResetFrame);
+ panel.scrollTop=0;
+ detailResetFrame=requestAnimationFrame(()=>{panel.scrollTop=0;detailResetFrame=0;});
+}
 function openCluster(index){
  const g=markerGroups[index];if(!g)return;const items=[...g.items];selected=null;scale=Math.min(10,scale*2);panX=-(g.x-400)*scale;panY=-(g.y-450)*scale;transform();
  $('#detail').hidden=false;$('#detail').innerHTML='<div class="cluster-list"><button class="detail-close" aria-label="關閉鄰近景點">×</button><h2>鄰近景點 '+items.length+' 處</h2><p class="cluster-hint">點選下方景點查看楓況</p>'+items.map(p=>`<button class="cluster-place" data-place="${escapeHTML(p.id)}">${escapeHTML(p.name)}<br><small>${escapeHTML(p.city)}</small></button>`).join('')+'</div>';
+ resetDetailScroll();
  $('.detail-close').onclick=()=>{$('#detail').hidden=true;};
 }
 function markerAction(e){const el=e.target.closest('[data-cluster],[data-id]');if(!el)return;if(el.hasAttribute('data-cluster'))openCluster(Number(el.dataset.cluster));else choose(el.dataset.id);}
 $('#detail').addEventListener('click',e=>{const p=e.target.closest('[data-place]');if(p)choose(p.dataset.place);});
 function foliageBlock(p){
  const o=p.foliage;
- if(!o)return `<section class="foliage-panel"><div class="panel-title"><h3>最近的楓況</h3><span class="badge" style="--c:#7d877d;--bg:#edf0eb">尚無資料</span></div><p class="foliage-summary">還沒有可確認的近期楓況</p><p class="foliage-meta">出發前可以先看看官方最新消息。下方的歷年賞楓時間能幫你安排旅程，但不代表現在已經轉色。</p></section>`;
+ if(!o)return `<section class="foliage-panel"><div class="panel-title"><h3>最近的楓況</h3><span class="badge" style="--c:#7d877d;--bg:#edf0eb">尚無資料</span></div><p class="foliage-summary">暫無近期楓況</p><p class="foliage-meta">請查看官方最新消息；歷年時間僅供行程參考。</p></section>`;
  const status=reportStage(p,o.status)||unknownStage;
  const referenceDate=o.observed_on||o.reported_at;
  const days=Math.floor((Date.now()-Date.parse(referenceDate+'T00:00:00+08:00'))/86400000);
  const stale=days>14;
  const mismatch=referenceDate.slice(0,7)!==month;
- return `<section class="foliage-panel"><div class="panel-title"><h3>最近一次官方楓況</h3><span class="badge" style="--c:${status.color};--bg:${status.bg}">${status.name}</span></div><p class="foliage-summary">${escapeHTML(o.summary.replace(/^官方(?:頁面|公告)(?:表示|指出)[：，、]?\s*/,''))}</p><dl class="foliage-facts"><div><dt>公告地點</dt><dd>${escapeHTML(o.scope)}</dd></div><div><dt>公告日期</dt><dd>${escapeHTML(o.reported_at)}</dd></div>${o.observed_on?`<div><dt>觀測日期</dt><dd>${escapeHTML(o.observed_on)}</dd></div>`:''}<div><dt>消息來源</dt><dd>${escapeHTML(o.source)}</dd></div></dl>${stale?'<p class="foliage-warning">這則消息已超過兩週，葉色可能已有變化。出發前再看看官方最新消息會更安心。</p>':''}${mismatch?'<p class="foliage-meta">這則消息不是你選擇月份的紀錄，請留意公告日期。</p>':''}</section>`;
+ return `<section class="foliage-panel"><div class="panel-title"><h3>最近一次官方楓況</h3><span class="badge" style="--c:${status.color};--bg:${status.bg}">${status.name}</span></div><p class="foliage-summary">${escapeHTML(o.summary.replace(/^官方(?:頁面|公告)(?:表示|指出)[：，、]?\s*/,''))}</p><dl class="foliage-facts"><div><dt>公告地點</dt><dd>${escapeHTML(o.scope)}</dd></div><div><dt>公告日期</dt><dd>${escapeHTML(o.reported_at)}</dd></div>${o.observed_on?`<div><dt>觀測日期</dt><dd>${escapeHTML(o.observed_on)}</dd></div>`:''}<div><dt>消息來源</dt><dd>${escapeHTML(o.source)}</dd></div></dl>${stale?'<p class="foliage-warning">消息已超過兩週，出發前請確認最新楓況。</p>':''}${mismatch?'<p class="foliage-meta">非所選月份的紀錄，請留意日期。</p>':''}</section>`;
 }
 function blogPhotosBlock(p){
  const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
  const cutoff=String(Number(today.slice(0,4))-10)+today.slice(4);
  const newsHost=/(^|\.)(cna.com.tw|ltn.com.tw|life.tw|tvbs.com.tw|ettoday.net|chinatimes.com|yahoo.com)$/;
  const links=(p.blog_photo_links||[]).filter(o=>{try{const u=new URL(o.url);const date=o.published_on||'';const full=/^\d{4}-\d{2}-\d{2}$/.test(date);const month=/^\d{4}-\d{2}$/.test(date);const compare=month?date+'-01':date;return u.protocol==='https:'&&!newsHost.test(u.hostname)&&o.source&&o.title&&o.route&&o.summary&&((o.date_kind==='undated'&&o.official_guide===true&&/^(recreation.forest.gov.tw|www.tsfa.com.tw|www.ali-nsa.net|www.erv-nsa.gov.tw)$/.test(u.hostname))||((full||month)&&Number.isFinite(Date.parse(compare))&&compare>=cutoff&&compare<=today));}catch{return false;}}).sort((a,b)=>(b.updated_on||b.published_on||'').localeCompare(a.updated_on||a.published_on||''));
- if(!links.length)return `<section class="blog-photos"><h4>旅遊文章</h4><p class="share-note">這裡的賞楓行程文章還在整理中，可以先參考下方的賞楓時間與官方資訊。</p></section>`;
+ if(!links.length)return `<section class="blog-photos"><h4>旅遊文章</h4><p class="share-note">暫無賞楓遊記，可先參考歷年時間與官方資訊。</p></section>`;
  return `<section class="blog-photos"><h4>旅遊文章 <span class="article-count">${links.length}</span></h4>${links.map(o=>{
-  const description=`<p class="share-note"><strong>怎麼玩：</strong>${escapeHTML(o.route)}<br><strong>文章看點：</strong>${escapeHTML(o.summary)}</p>${o.viewing_area_group?viewingAreasBlock(p,o.viewing_area_group):''}`;
+  const description=`<p class="share-note"><strong>路線：</strong>${escapeHTML(o.route)}<br><strong>看點：</strong>${escapeHTML(o.summary)}</p>${o.viewing_area_group?viewingAreasBlock(p,o.viewing_area_group):''}`;
   const long=(o.route+o.summary).length>90||o.viewing_area_group;
-  return `<article class="blog-photo-link"><a class="article-title" href="${escapeHTML(o.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(o.title)} ↗</a><p class="share-source">${escapeHTML(o.source)} · ${o.date_kind==='undated'?'日期未標示（官方指南）':(o.date_kind==='updated'?'更新':'發表')+' '+escapeHTML(o.published_on)}${o.updated_on?` · 更新 ${escapeHTML(o.updated_on)}`:''}${o.reference_period?`<br>造訪時期：${escapeHTML(o.reference_period)}`:''}</p>${long?`<details class="article-description"><summary>看看行程怎麼安排</summary>${description}</details>`:description}</article>`;
- }).join('')}<p class="share-note article-disclaimer">看看旅人的路線與歷年秋色，找找行程靈感；今年的葉色仍以近期官方公告為準。</p></section>`;
+  return `<article class="blog-photo-link"><a class="article-title" href="${escapeHTML(o.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(o.title)} ↗</a><p class="share-source">${escapeHTML(o.source)} · ${o.date_kind==='undated'?'日期未標示（官方指南）':(o.date_kind==='updated'?'更新':'發表')+' '+escapeHTML(o.published_on)}${o.updated_on?` · 更新 ${escapeHTML(o.updated_on)}`:''}${o.reference_period?`<br>造訪時期：${escapeHTML(o.reference_period)}`:''}</p>${long?`<details class="article-description"><summary>行程重點</summary>${description}</details>`:description}</article>`;
+ }).join('')}<p class="share-note article-disclaimer">遊記供行程參考；今年楓況請看官方最新消息。</p></section>`;
 }
 function latestBlock(p){
  const observation=foliageBlock(p);
  const shares=photosBlock(p).replace(/<div class="panel-title">.*?<\/div>/,'');
- return `<section class="latest-panel"><h3>看看最近的楓況</h3>${shares}${observation}${foliageLinksBlock(p,'source')}${blogPhotosBlock(p)}</section>`;
+ return `<section class="latest-panel"><h3>近期楓況</h3>${shares}${observation}${foliageLinksBlock(p,'source')}${blogPhotosBlock(p)}</section>`;
 }
 
 function viewingAreasBlock(p,group){
@@ -340,9 +348,9 @@ function renderDetail(){
  let p=places.find(p=>p.id===selected);
  if(!p){$('#detail').innerHTML='';$('#detail').hidden=true;return;}
  $('#detail').hidden=false;const s=stage(p);
- $('#detail').innerHTML=`<div class="detail-head"><button class="detail-close" aria-label="關閉景點資訊">×</button><h2>${escapeHTML(p.name)}</h2><p>${escapeHTML(p.city)}</p><nav class="detail-nav" aria-label="景點資訊區塊"><button data-section="latest-panel">楓況與分享</button><button data-section="season-panel">歷年時間</button><button data-section="species-panel">品種</button><button data-section="location-disclosure">官方資訊</button></nav></div><div class="detail-body">${latestBlock(p)}<section class="season-panel"><div class="panel-title"><h3>什麼時候來賞楓？</h3><span class="badge" style="--c:${s.color};--bg:${s.bg}">${s.name}</span></div><div class="dates-label">你的出發月份：${escapeHTML(month)}</div><div class="dates">${escapeHTML(p.dates)}</div><p class="reference-note">可以先用歷年的賞楓時間安排旅程；每年的轉色步調不同，出發前再確認近期楓況。</p><details class="season-source"><summary>看看賞楓時間的參考依據</summary><div class="source-line">${p.source?escapeHTML(p.source):'尚無季節來源'}${p.source_url?` · <a href="${escapeHTML(p.source_url)}" target="_blank" rel="noopener noreferrer">來源 ↗</a>`:''}</div><div class="source-line">${escapeHTML(p.note||'')}${p.checked_at?`<br>資料確認日期：${escapeHTML(p.checked_at.slice(0,10))}（不是現場觀測日期）`:''}</div></details>${historicalPhotosBlock(p)}</section>${relatedRoutesBlock(p)}${speciesBlock(p)}<details class="location-disclosure" open><summary>官方資訊與即時影像</summary><div class="location-info">${officialInfoLink(p)}<div class="location-heading">景點位置</div><strong class="location-address">${escapeHTML(p.region)} · ${escapeHTML(p.city)}</strong><div class="coordinates">緯度 ${Number(p.lat).toFixed(5)}° N<br>經度 ${Number(p.lon).toFixed(5)}° E</div>${escapeHTML(p.category)} · ${escapeHTML(p.coordinate_scope)}${p.intro?`<p class="reference-note"><strong>這裡看什麼：</strong>${escapeHTML(p.intro)}</p>`:''}${p.notice_url?`<a class="trail-information" href="${escapeHTML(p.notice_url)}" target="_blank" rel="noopener noreferrer">步道資訊與開放公告 ↗</a>`:''}${navigationLink(p)}${liveCamerasBlock(p)}</div></details><div class="detail-footer"><span>賞楓前，別忘了確認最新公告</span><button class="save" aria-pressed="${saved.has(p.id)}">${saved.has(p.id)?'♥ 已收藏':'♡ 收藏景點'}</button></div></div>`;
+ $('#detail').innerHTML=`<div class="detail-head"><button class="detail-close" aria-label="關閉景點資訊">×</button><h2>${escapeHTML(p.name)}</h2><p>${escapeHTML(p.city)}</p><nav class="detail-nav" aria-label="景點資訊區塊"><button data-section="latest-panel">楓況與分享</button><button data-section="season-panel">歷年時間</button><button data-section="species-panel">品種</button><button data-section="location-disclosure">官方資訊</button></nav></div><div class="detail-body">${latestBlock(p)}<section class="season-panel"><div class="panel-title"><h3>賞楓時間</h3><span class="badge" style="--c:${s.color};--bg:${s.bg}">${s.name}</span></div><div class="dates-label">出發月份：${escapeHTML(month)}</div><div class="dates">${escapeHTML(p.dates)}</div><p class="reference-note">轉色時間每年不同，出發前請確認近期楓況。</p><details class="season-source"><summary>賞楓時間參考</summary><div class="source-line">${p.source?escapeHTML(p.source):'尚無季節來源'}${p.source_url?` · <a href="${escapeHTML(p.source_url)}" target="_blank" rel="noopener noreferrer">來源 ↗</a>`:''}</div><div class="source-line">${escapeHTML(p.note||'')}${p.checked_at?`<br>資料確認日期：${escapeHTML(p.checked_at.slice(0,10))}（不是現場觀測日期）`:''}</div></details>${historicalPhotosBlock(p)}</section>${relatedRoutesBlock(p)}${speciesBlock(p)}<details class="location-disclosure" open><summary>官方資訊與即時影像</summary><div class="location-info">${officialInfoLink(p)}<div class="location-heading">景點位置</div><strong class="location-address">${escapeHTML(p.region)} · ${escapeHTML(p.city)}</strong><div class="coordinates">緯度 ${Number(p.lat).toFixed(5)}° N<br>經度 ${Number(p.lon).toFixed(5)}° E</div>${escapeHTML(p.category)} · ${escapeHTML(p.coordinate_scope)}${p.intro?`<p class="reference-note"><strong>景點特色：</strong>${escapeHTML(p.intro)}</p>`:''}${p.notice_url?`<a class="trail-information" href="${escapeHTML(p.notice_url)}" target="_blank" rel="noopener noreferrer">步道資訊 ↗</a>`:''}${navigationLink(p)}${liveCamerasBlock(p)}</div></details><div class="detail-footer"><span>出發前請確認最新公告</span><button class="save" aria-pressed="${saved.has(p.id)}">${saved.has(p.id)?'♥ 已收藏':'♡ 收藏景點'}</button></div></div>`;
  deduplicateDetailLinks($('#detail'));
- $('#detail').querySelectorAll('[data-section]').forEach(button=>{button.onclick=()=>{const target=$('#detail').querySelector('.'+button.dataset.section);if(target){$('#detail').querySelectorAll('[data-section]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));if(target.tagName==='DETAILS')target.open=true;const head=$('#detail').querySelector('.detail-head');const container=$('#detail');container.scrollTop+=target.getBoundingClientRect().top-container.getBoundingClientRect().top-head.offsetHeight-14;}};});
+ $('#detail').querySelectorAll('[data-section]').forEach(button=>{button.onclick=()=>{cancelAnimationFrame(detailResetFrame);const target=$('#detail').querySelector('.'+button.dataset.section);if(target){$('#detail').querySelectorAll('[data-section]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));if(target.tagName==='DETAILS')target.open=true;const head=$('#detail').querySelector('.detail-head');const container=$('#detail');container.scrollTop+=target.getBoundingClientRect().top-container.getBoundingClientRect().top-head.offsetHeight-14;}};});
  $('#detail').querySelectorAll('.share-preview img').forEach(img=>{img.onerror=()=>{img.hidden=true;img.nextElementSibling.hidden=false;};});
  $('#detail').querySelectorAll('.history-photo img').forEach(img=>{img.onerror=()=>{img.closest('.photo-image-link').hidden=true;img.closest('.history-photo').querySelector('.photo-unavailable').hidden=false;};});
  $('#detail').querySelectorAll('.photo-image-link').forEach(link=>{link.onclick=e=>{e.preventDefault();openPhotoViewer(link);};});
@@ -355,6 +363,7 @@ function choose(id){
  const p=places.find(p=>p.id===id);if(!p)return;
  scale=Math.max(scale,4);
  $('#sidebar').classList.remove('open');$('#mobile-list').textContent='☰ 景點清單';$('#mobile-list').setAttribute('aria-expanded','false');render();
+ resetDetailScroll();
  const mapRect=svg.getBoundingClientRect(),card=$('#detail').getBoundingClientRect();
  const target=svg.createSVGPoint();
  target.x=innerWidth>=1051?mapRect.left+Math.max(90,card.left-mapRect.left)/2:mapRect.left+mapRect.width/2;

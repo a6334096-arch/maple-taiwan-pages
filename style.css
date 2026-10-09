@@ -508,3 +508,6 @@ body,.brand,input,select,.text-button,.map-title{color:#222222}
 .detail .article-title,.detail .article-title:visited,.detail .trail-information,.detail .trail-information:visited,.detail .source-line a,.detail .photo-credit a,.detail .location-navigation,.detail .location-navigation:visited,.detail .live-camera>a,.detail .live-camera>a:visited,.detail .foliage-links .share-button.secondary,.detail .foliage-links .share-button.secondary:visited,.detail-nav button,.detail .save,.article-description>summary,.detail .season-source>summary{color:#222222}
 .detail .official-links a,.detail .official-links a:visited,.detail .official-links a:hover,.detail .foliage-links .share-button:first-child:not(.secondary),.detail .foliage-links .share-button:first-child:not(.secondary):visited,.detail .foliage-links .share-button:first-child:not(.secondary):hover,.detail-nav button[aria-pressed=true],.detail-nav button[aria-pressed=true]:hover,.detail-nav button[aria-pressed=true]:focus-visible{color:#fff}
 input::placeholder{color:#666666}
+
+/* Prevent retained scroll anchors when switching places. */
+#detail{overflow-anchor:none;scroll-behavior:auto}
