@@ -1,0 +1,56 @@
+name: Maple daily sync and deploy
+on:
+  schedule:
+    # 09:37 Taiwan time; upstream checks start at 08:00.
+    - cron: '37 1 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: maple-pages
+  cancel-in-progress: false
+jobs:
+  sync-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read and validate public datasets
+        run: python scripts/sync-maple.py
+      - name: Save changed datasets
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add seasons.json foliage.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update verified maple datasets'
+            git push origin HEAD:main
+          fi
+      - uses: actions/configure-pages@v5
+      - name: Prepare website
+        run: |
+          mkdir -p _site
+          cp index.html style.css app.js places.json seasons.json foliage.json _site/
+          cp -r photos _site/
+          touch _site/.nojekyll
+          for file in google*.html; do
+            if [ -f "$file" ]; then cp "$file" _site/; fi
+          done
+          for file in robots.txt sitemap.xml; do
+            if [ -f "$file" ]; then cp "$file" _site/; fi
+          done
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
