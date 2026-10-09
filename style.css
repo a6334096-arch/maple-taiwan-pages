@@ -344,3 +344,38 @@ header{gap:8px}.brand{min-width:0;flex-shrink:0}.header-right{min-width:0;gap:8p
 .latest-panel .foliage-links .share-button{margin:0;min-height:44px;font-size:13px}
 .latest-panel .foliage-links .secondary{background:#fffdf7;color:#304f40;border:1px solid #d8dfcf}
 .latest-panel .foliage-links .secondary:hover{background:#edf2e4}
+
+/* Clear reading hierarchy and consistent link actions. */
+.detail{color:#253c32;background:#fffefa}
+.detail-head,.detail-head h2{background:#fffefa;font-family:inherit}
+.detail-head h2{font-size:23px;font-weight:650;line-height:1.5;letter-spacing:0}
+.detail-head>p{font-size:13px;color:#58675c;margin:6px 0 0}
+.detail-body{padding:22px;line-height:1.85;overflow-wrap:anywhere}
+.detail-body h3{font-size:17px;line-height:1.6;margin-bottom:12px;color:#253c32}
+.detail-body h4,.location-heading{font-size:14px;font-weight:650;color:#3b5747;line-height:1.6}
+.detail .reference-note,.detail .foliage-meta,.detail .share-source,.detail .source-line,.detail .species-note,.detail .camera-note,.detail .share-note{font-size:13px;line-height:1.85;color:#536357}
+.detail .latest-panel{padding:18px;background:#f4f7f0;border-color:#dbe4d4}
+.latest-panel .foliage-summary{font-size:16px;font-weight:600;line-height:1.85;margin:12px 0}
+.foliage-facts{display:grid;gap:8px;margin:12px 0 16px;font-size:13px;line-height:1.8}
+.foliage-facts>div{display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px;align-items:start}
+.foliage-facts dt{color:#647267}.foliage-facts dd{margin:0;color:#253c32;font-variant-numeric:tabular-nums}
+.detail .foliage-warning{padding:10px 12px;border-left:3px solid #bb843c;background:#fff2dc;color:#755020;font-size:13px;line-height:1.8;border-radius:0 8px 8px 0}
+.detail .dates{font-size:20px;font-weight:600;line-height:1.75;margin:10px 0;color:#304f40}
+.detail .dates-label{font-size:12px;line-height:1.8;color:#607066}
+.detail .season-panel,.detail .species-panel{margin-top:24px;padding-top:24px}
+.detail .blog-photos>summary,.detail .season-source>summary{min-height:44px;padding:10px 0;font-size:13px;line-height:1.8}
+.detail .share-button,.detail .official-links a,.detail .location-navigation,.detail .live-camera>a{display:flex;align-items:center;justify-content:center;min-height:46px;padding:11px 14px;margin:8px 0;border:1px solid #a5b9a8;border-radius:10px;background:#f3f7f0;color:#304f40;text-decoration:none;font-size:13px;font-weight:600;line-height:1.7;text-align:center;box-sizing:border-box;overflow-wrap:anywhere}
+.detail .foliage-links .share-button:first-child:not(.secondary){background:#365b46;border-color:#365b46;color:#fff}
+.detail .foliage-links .share-button.secondary{background:#f3f7f0;border-color:#a5b9a8;color:#304f40}
+.detail .share-button:visited,.detail .official-links a:visited,.detail .location-navigation:visited,.detail .live-camera>a:visited{color:#304f40}
+.detail .foliage-links .share-button:first-child:not(.secondary):visited{color:#fff}
+.detail .share-button:hover,.detail .official-links a:hover,.detail .location-navigation:hover,.detail .live-camera>a:hover{background:#e6efdf;color:#253c32;border-color:#6f9376}
+.detail .foliage-links .share-button:first-child:not(.secondary):hover{background:#284635;color:#fff}
+.detail a:focus-visible,.detail button:focus-visible,.detail summary:focus-visible{outline:3px solid #bd873f;outline-offset:3px}
+.detail .official-links{gap:0;border-bottom:0;padding-bottom:0;margin-bottom:20px}
+.detail .location-info{font-size:13px;line-height:1.85}.detail .coordinates{font-size:12px;line-height:1.8;margin:8px 0;color:#617166}
+.detail .live-camera small{display:block;font-size:12px;line-height:1.8;color:#607066}
+.detail .blog-photo-link .share-button{text-align:left;justify-content:flex-start}
+.detail-nav button{background:#f3f7f0;border-color:#d2dfcf;color:#365b46;font-size:12px}
+.detail-nav button:hover{background:#e6efdf;border-color:#95ad96}
+@media(max-width:700px){.detail-head h2{font-size:21px}.detail-body{padding:18px 16px}.detail .latest-panel{padding:14px}.detail-body h3{font-size:16px}.foliage-facts>div{grid-template-columns:68px minmax(0,1fr);gap:9px}}

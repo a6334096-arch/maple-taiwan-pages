@@ -174,7 +174,7 @@ function foliageBlock(p){
  const days=Math.floor((Date.now()-Date.parse(referenceDate+'T00:00:00+08:00'))/86400000);
  const stale=days>14;
  const mismatch=referenceDate.slice(0,7)!==month;
- return `<section class="foliage-panel"><div class="panel-title"><h3>最新楓況紀錄</h3><span class="badge" style="--c:${status.color};--bg:${status.bg}">${status.name}</span></div><p class="foliage-summary">${escapeHTML(o.summary)}</p><p class="foliage-meta">範圍：${escapeHTML(o.scope)}<br>公告日期：${escapeHTML(o.reported_at)}${o.observed_on?`<br>觀測日期：${escapeHTML(o.observed_on)}`:''}<br>${escapeHTML(o.source)}</p>${stale?'<p class="foliage-warning">這筆紀錄已超過 14 天，不能代表今天的楓況。</p>':''}${mismatch?'<p class="foliage-meta">紀錄日期與所選月份不同，不據此推估該月份楓況。</p>':''}</section>`;
+ return `<section class="foliage-panel"><div class="panel-title"><h3>最新楓況紀錄</h3><span class="badge" style="--c:${status.color};--bg:${status.bg}">${status.name}</span></div><p class="foliage-summary">${escapeHTML(o.summary)}</p><dl class="foliage-facts"><div><dt>觀測範圍</dt><dd>${escapeHTML(o.scope)}</dd></div><div><dt>公告日期</dt><dd>${escapeHTML(o.reported_at)}</dd></div>${o.observed_on?`<div><dt>觀測日期</dt><dd>${escapeHTML(o.observed_on)}</dd></div>`:''}<div><dt>資料來源</dt><dd>${escapeHTML(o.source)}</dd></div></dl>${stale?'<p class="foliage-warning">這筆紀錄已超過 14 天，不能代表今天的楓況。</p>':''}${mismatch?'<p class="foliage-meta">紀錄日期與所選月份不同，不據此推估該月份楓況。</p>':''}</section>`;
 }
 function blogPhotosBlock(p){
  const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
