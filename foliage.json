@@ -1,34 +1,35 @@
 {
   "foliage": {
-    "taipingshan": null,
-    "fengshuhu": null,
-    "gongbei": null,
-    "manyueyuan": null,
-    "xiuluan": null,
-    "smangus": null,
-    "xiakelo": null,
-    "dongyanshan": null,
-    "jiaobanshan": null,
+    "hongye-park": null,
     "shimen": null,
     "lalashan": null,
-    "taipei-aowanda": null,
-    "huisun": null,
-    "qingjing": null,
-    "aowanda": null,
-    "shanlinxi": null,
-    "wuling": null,
-    "dongshi-forest": null,
-    "maple-valley": null,
-    "fushoushan": null,
-    "daxueshan": null,
-    "yuanzui": null,
-    "guguan": null,
     "basianshan": null,
-    "manabang": null,
+    "maple-valley": null,
+    "dongyanshan": null,
+    "dongshi-forest": null,
+    "yuanzui": null,
+    "aowanda": null,
     "alishan": null,
+    "wuling": null,
+    "fengshuhu": null,
     "lijia-maple": null,
-    "hongye-park": null,
+    "manyueyuan": null,
+    "manabang": null,
+    "huisun": null,
+    "jiaobanshan": null,
+    "shanlinxi": null,
+    "daxueshan": null,
     "danongdafu": null,
+    "xiuluan": null,
+    "taipei-aowanda": null,
+    "smangus": null,
+    "qingjing": null,
+    "fushoushan": null,
+    "taipingshan": null,
+    "gongbei": null,
+    "xiakelo": null,
+    "guguan": null,
+    "beichatianshan": null,
     "taipingshan-beech": {
       "status": 1,
       "summary": "官方頁面表示，太平山台灣山毛櫸的葉片已逐漸轉為金黃，步道景觀可見金黃色葉片與部分落葉。",
@@ -37,138 +38,137 @@
       "source_url": "https://tps.forest.gov.tw/TPSWeb/wSite/ct?ctNode=244&mp=1&xItem=4101",
       "reported_at": "2026-09-22",
       "checked_at": "2026-10-09T00:02:10.202Z"
-    },
-    "beichatianshan": null
+    }
   },
   "sync": {
-    "run_id": "72de9ad7-3600-4ff9-bbb5-416cb87c91c1",
-    "attempted_at": "2026-10-09T00:02:13.905Z",
-    "successful_sources": 20,
-    "failed_sources": 11,
+    "run_id": "b47e8fce-66f0-421a-a669-af3fbf15e80d",
+    "attempted_at": "2026-10-10T00:07:05.678Z",
+    "successful_sources": 14,
+    "failed_sources": 17,
     "checks": {
       "taipingshan": {
         "status": "success",
-        "message": "已於2026-10-09查核可讀取的官方公告列表與官方搜尋結果，未發現較新的合格實際葉況公告；保留原楓況。"
+        "message": "2026-10-10查核可讀取官方最新公告列表及相關官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料，不推定葉色。"
       },
       "fengshuhu": {
-        "status": "success",
-        "message": "已於2026-10-09查核可讀取的官方公告列表與官方搜尋結果，未發現較新的合格實際葉況公告；保留原楓況。"
+        "status": "failed",
+        "message": "本次只取得季節／景點介紹或官方最新公告來源未完整讀取；即時楓況查核未完成，保留原資料與舊日期。"
       },
       "gongbei": {
         "status": "failed",
-        "message": "官方最新公告來源仍未能完整讀取或只取得季節／景點介紹；不以月份、氣溫或圖片推定楓況，保留原資料與舊日期。"
+        "message": "本次只取得季節／景點介紹或官方最新公告來源未完整讀取；即時楓況查核未完成，保留原資料與舊日期。"
       },
       "manyueyuan": {
         "status": "success",
-        "message": "已於2026-10-09查核可讀取的官方公告列表與官方搜尋結果，未發現較新的合格實際葉況公告；保留原楓況。"
+        "message": "2026-10-10查核可讀取官方最新公告列表及相關官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料，不推定葉色。"
       },
       "xiuluan": {
         "status": "failed",
-        "message": "官方最新公告來源仍未能完整讀取或只取得季節／景點介紹；不以月份、氣溫或圖片推定楓況，保留原資料與舊日期。"
+        "message": "本次只取得季節／景點介紹或官方最新公告來源未完整讀取；即時楓況查核未完成，保留原資料與舊日期。"
       },
       "smangus": {
         "status": "success",
-        "message": "已於2026-10-09查核可讀取的官方公告列表與官方搜尋結果，未發現較新的合格實際葉況公告；保留原楓況。"
+        "message": "2026-10-10查核可讀取官方最新公告列表及相關官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料，不推定葉色。"
       },
       "xiakelo": {
         "status": "success",
-        "message": "已於2026-10-09查核可讀取的官方公告列表與官方搜尋結果，未發現較新的合格實際葉況公告；保留原楓況。"
+        "message": "2026-10-10查核可讀取官方最新公告列表及相關官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料，不推定葉色。"
       },
       "dongyanshan": {
         "status": "success",
-        "message": "已於2026-10-09查核可讀取的官方公告列表與官方搜尋結果，未發現較新的合格實際葉況公告；保留原楓況。"
+        "message": "2026-10-10查核可讀取官方最新公告列表及相關官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料，不推定葉色。"
       },
       "jiaobanshan": {
         "status": "failed",
-        "message": "官方最新公告來源仍未能完整讀取或只取得季節／景點介紹；不以月份、氣溫或圖片推定楓況，保留原資料與舊日期。"
+        "message": "本次只取得季節／景點介紹或官方最新公告來源未完整讀取；即時楓況查核未完成，保留原資料與舊日期。"
       },
       "shimen": {
         "status": "failed",
-        "message": "官方最新公告來源仍未能完整讀取或只取得季節／景點介紹；不以月份、氣溫或圖片推定楓況，保留原資料與舊日期。"
+        "message": "本次只取得季節／景點介紹或官方最新公告來源未完整讀取；即時楓況查核未完成，保留原資料與舊日期。"
       },
       "lalashan": {
         "status": "success",
-        "message": "已於2026-10-09查核可讀取的官方公告列表與官方搜尋結果，未發現較新的合格實際葉況公告；保留原楓況。"
+        "message": "2026-10-10查核可讀取官方最新公告列表及相關官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料，不推定葉色。"
       },
       "taipei-aowanda": {
         "status": "failed",
-        "message": "官方最新公告來源仍未能完整讀取或只取得季節／景點介紹；不以月份、氣溫或圖片推定楓況，保留原資料與舊日期。"
+        "message": "本次只取得季節／景點介紹或官方最新公告來源未完整讀取；即時楓況查核未完成，保留原資料與舊日期。"
       },
       "huisun": {
-        "status": "success",
-        "message": "已於2026-10-09查核可讀取的官方公告列表與官方搜尋結果，未發現較新的合格實際葉況公告；保留原楓況。"
+        "status": "failed",
+        "message": "本次只取得季節／景點介紹或官方最新公告來源未完整讀取；即時楓況查核未完成，保留原資料與舊日期。"
       },
       "qingjing": {
-        "status": "success",
-        "message": "已於2026-10-09查核可讀取的官方公告列表與官方搜尋結果，未發現較新的合格實際葉況公告；保留原楓況。"
+        "status": "failed",
+        "message": "本次只取得季節／景點介紹或官方最新公告來源未完整讀取；即時楓況查核未完成，保留原資料與舊日期。"
       },
       "aowanda": {
         "status": "success",
-        "message": "已於2026-10-09查核可讀取的官方公告列表與官方搜尋結果，未發現較新的合格實際葉況公告；保留原楓況。"
+        "message": "2026-10-10查核可讀取官方最新公告列表及相關官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料，不推定葉色。"
       },
       "shanlinxi": {
-        "status": "success",
-        "message": "已於2026-10-09查核可讀取的官方公告列表與官方搜尋結果，未發現較新的合格實際葉況公告；保留原楓況。"
+        "status": "failed",
+        "message": "本次只取得季節／景點介紹或官方最新公告來源未完整讀取；即時楓況查核未完成，保留原資料與舊日期。"
       },
       "wuling": {
-        "status": "failed",
-        "message": "官方最新公告來源仍未能完整讀取或只取得季節／景點介紹；不以月份、氣溫或圖片推定楓況，保留原資料與舊日期。"
+        "status": "success",
+        "message": "2026-10-10查核可讀取官方最新公告列表及相關官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料，不推定葉色。"
       },
       "dongshi-forest": {
         "status": "failed",
-        "message": "官方最新公告來源仍未能完整讀取或只取得季節／景點介紹；不以月份、氣溫或圖片推定楓況，保留原資料與舊日期。"
+        "message": "本次只取得季節／景點介紹或官方最新公告來源未完整讀取；即時楓況查核未完成，保留原資料與舊日期。"
       },
       "maple-valley": {
         "status": "failed",
-        "message": "官方最新公告來源仍未能完整讀取或只取得季節／景點介紹；不以月份、氣溫或圖片推定楓況，保留原資料與舊日期。"
+        "message": "本次只取得季節／景點介紹或官方最新公告來源未完整讀取；即時楓況查核未完成，保留原資料與舊日期。"
       },
       "fushoushan": {
-        "status": "success",
-        "message": "已於2026-10-09查核可讀取的官方公告列表與官方搜尋結果，未發現較新的合格實際葉況公告；保留原楓況。"
+        "status": "failed",
+        "message": "本次只取得季節／景點介紹或官方最新公告來源未完整讀取；即時楓況查核未完成，保留原資料與舊日期。"
       },
       "daxueshan": {
         "status": "success",
-        "message": "已於2026-10-09查核可讀取的官方公告列表與官方搜尋結果，未發現較新的合格實際葉況公告；保留原楓況。"
+        "message": "2026-10-10查核可讀取官方最新公告列表及相關官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料，不推定葉色。"
       },
       "yuanzui": {
         "status": "success",
-        "message": "已於2026-10-09查核可讀取的官方公告列表與官方搜尋結果，未發現較新的合格實際葉況公告；保留原楓況。"
+        "message": "2026-10-10查核可讀取官方最新公告列表及相關官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料，不推定葉色。"
       },
       "guguan": {
         "status": "failed",
-        "message": "官方最新公告來源仍未能完整讀取或只取得季節／景點介紹；不以月份、氣溫或圖片推定楓況，保留原資料與舊日期。"
+        "message": "本次只取得季節／景點介紹或官方最新公告來源未完整讀取；即時楓況查核未完成，保留原資料與舊日期。"
       },
       "basianshan": {
         "status": "success",
-        "message": "已於2026-10-09查核可讀取的官方公告列表與官方搜尋結果，未發現較新的合格實際葉況公告；保留原楓況。"
+        "message": "2026-10-10查核可讀取官方最新公告列表及相關官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料，不推定葉色。"
       },
       "manabang": {
-        "status": "success",
-        "message": "已於2026-10-09查核可讀取的官方公告列表與官方搜尋結果，未發現較新的合格實際葉況公告；保留原楓況。"
+        "status": "failed",
+        "message": "本次只取得季節／景點介紹或官方最新公告來源未完整讀取；即時楓況查核未完成，保留原資料與舊日期。"
       },
       "alishan": {
         "status": "success",
-        "message": "已於2026-10-09查核可讀取的官方公告列表與官方搜尋結果，未發現較新的合格實際葉況公告；保留原楓況。"
+        "message": "2026-10-10查核可讀取官方最新公告列表及相關官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料，不推定葉色。"
       },
       "lijia-maple": {
         "status": "failed",
-        "message": "官方最新公告來源仍未能完整讀取或只取得季節／景點介紹；不以月份、氣溫或圖片推定楓況，保留原資料與舊日期。"
+        "message": "本次只取得季節／景點介紹或官方最新公告來源未完整讀取；即時楓況查核未完成，保留原資料與舊日期。"
       },
       "hongye-park": {
         "status": "failed",
-        "message": "官方最新公告來源仍未能完整讀取或只取得季節／景點介紹；不以月份、氣溫或圖片推定楓況，保留原資料與舊日期。"
+        "message": "本次只取得季節／景點介紹或官方最新公告來源未完整讀取；即時楓況查核未完成，保留原資料與舊日期。"
       },
       "danongdafu": {
         "status": "success",
-        "message": "已於2026-10-09查核可讀取的官方公告列表與官方搜尋結果，未發現較新的合格實際葉況公告；保留原楓況。"
+        "message": "2026-10-10查核可讀取官方最新公告列表及相關官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料，不推定葉色。"
       },
       "taipingshan-beech": {
-        "status": "success",
-        "message": "新增2026-09-22官方日期頁：台灣山毛櫸步道末段葉片已逐漸轉為金黃；依文字判為轉色中，未以圖片或月份推定。"
+        "status": "failed",
+        "message": "原記錄2026-09-22僅可確認為季節推薦頁更新日期，未找到明確公告或觀測日期；舊紀錄保留待核實，不刷新日期或新增實況，超過14天不列近期盛期。"
       },
       "beichatianshan": {
         "status": "success",
-        "message": "已於2026-10-09查核可讀取的官方公告列表與官方搜尋結果，未發現較新的合格實際葉況公告；保留原楓況。"
+        "message": "2026-10-10查核可讀取官方最新公告列表及相關官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料，不推定葉色。"
       }
     }
   }
