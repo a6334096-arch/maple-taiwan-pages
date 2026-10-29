@@ -1,29 +1,19 @@
 {
   "foliage": {
-    "shanlinxi": null,
-    "guguan": null,
-    "dongshi-forest": null,
-    "beichatianshan": null,
-    "maple-valley": null,
-    "danongdafu": null,
-    "qingjing": null,
-    "basianshan": null,
-    "smangus": null,
-    "gongbei": null,
-    "yuanzui": null,
-    "manabang": null,
-    "huisun": null,
-    "fengshuhu": null,
-    "xiakelo": null,
-    "taipei-aowanda": null,
-    "hongye-park": null,
-    "lalashan": null,
-    "daxueshan": null,
-    "alishan": null,
-    "manyueyuan": null,
     "jiaobanshan": null,
+    "gongbei": null,
+    "qingjing": null,
+    "dongyanshan": null,
+    "basianshan": null,
+    "shanlinxi": null,
     "fushoushan": null,
-    "wuling": null,
+    "manabang": null,
+    "danongdafu": null,
+    "fengshuhu": null,
+    "hongye-park": null,
+    "alishan": null,
+    "maple-valley": null,
+    "taipingshan": null,
     "taipingshan-beech": {
       "status": 1,
       "summary": "官方頁面表示，太平山台灣山毛櫸的葉片已逐漸轉為金黃，步道景觀可見金黃色葉片與部分落葉。",
@@ -33,22 +23,32 @@
       "reported_at": "2026-09-22",
       "checked_at": "2026-10-09T00:02:10.202Z"
     },
-    "xiuluan": null,
+    "lijia-maple": null,
+    "daxueshan": null,
+    "smangus": null,
+    "manyueyuan": null,
     "aowanda": null,
-    "dongyanshan": null,
-    "taipingshan": null,
     "shimen": null,
-    "lijia-maple": null
+    "beichatianshan": null,
+    "lalashan": null,
+    "dongshi-forest": null,
+    "xiuluan": null,
+    "huisun": null,
+    "guguan": null,
+    "xiakelo": null,
+    "yuanzui": null,
+    "wuling": null,
+    "taipei-aowanda": null
   },
   "sync": {
-    "run_id": "a87b8ac3-4085-44cd-a105-2d33abcf2090",
-    "attempted_at": "2026-10-28T00:00:21.303Z",
+    "run_id": "e3df7a8f-eddf-43bd-99a1-bf22c19f59dd",
+    "attempted_at": "2026-10-29T00:04:32.042Z",
     "successful_sources": 14,
     "failed_sources": 17,
     "checks": {
       "taipingshan": {
         "status": "success",
-        "message": "2026-10-28已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
+        "message": "2026-10-29已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
       },
       "fengshuhu": {
         "status": "failed",
@@ -60,7 +60,7 @@
       },
       "manyueyuan": {
         "status": "success",
-        "message": "2026-10-28已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
+        "message": "2026-10-29已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
       },
       "xiuluan": {
         "status": "failed",
@@ -68,15 +68,15 @@
       },
       "smangus": {
         "status": "success",
-        "message": "2026-10-28已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
+        "message": "2026-10-29已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
       },
       "xiakelo": {
         "status": "success",
-        "message": "2026-10-28已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
+        "message": "2026-10-29已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
       },
       "dongyanshan": {
         "status": "success",
-        "message": "2026-10-28已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
+        "message": "2026-10-29已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
       },
       "jiaobanshan": {
         "status": "failed",
@@ -88,7 +88,7 @@
       },
       "lalashan": {
         "status": "success",
-        "message": "2026-10-28已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
+        "message": "2026-10-29已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
       },
       "taipei-aowanda": {
         "status": "failed",
@@ -104,7 +104,7 @@
       },
       "aowanda": {
         "status": "success",
-        "message": "2026-10-28已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
+        "message": "2026-10-29已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
       },
       "shanlinxi": {
         "status": "failed",
@@ -112,7 +112,7 @@
       },
       "wuling": {
         "status": "success",
-        "message": "2026-10-28已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
+        "message": "2026-10-29已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
       },
       "dongshi-forest": {
         "status": "failed",
@@ -128,11 +128,11 @@
       },
       "daxueshan": {
         "status": "success",
-        "message": "2026-10-28已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
+        "message": "2026-10-29已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
       },
       "yuanzui": {
         "status": "success",
-        "message": "2026-10-28已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
+        "message": "2026-10-29已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
       },
       "guguan": {
         "status": "failed",
@@ -140,7 +140,7 @@
       },
       "basianshan": {
         "status": "success",
-        "message": "2026-10-28已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
+        "message": "2026-10-29已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
       },
       "manabang": {
         "status": "failed",
@@ -148,7 +148,7 @@
       },
       "alishan": {
         "status": "success",
-        "message": "2026-10-28已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
+        "message": "2026-10-29已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
       },
       "lijia-maple": {
         "status": "failed",
@@ -160,15 +160,15 @@
       },
       "danongdafu": {
         "status": "success",
-        "message": "2026-10-28已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
+        "message": "2026-10-29已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
       },
       "taipingshan-beech": {
         "status": "failed",
-        "message": "季節推薦頁的2026-09-22僅能確認為更新日期，其他頁面只有季節與開放資訊，仍無明確公告／觀測日期；保留舊紀錄待核實，不刷新日期。"
+        "message": "2026-10-25官方社群彙整僅連至社群貼文，且未提供可獨立核實的明確觀測日期與分段葉況；依規則不以社群單一訊息新增實況，保留舊紀錄與日期待核實。"
       },
       "beichatianshan": {
         "status": "success",
-        "message": "2026-10-28已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
+        "message": "2026-10-29已查核可讀取的官方最新公告列表及官方搜尋；未找到較新且具公告／觀測日期、明確葉況及範圍的合格紀錄，保留原資料。"
       }
     }
   }
